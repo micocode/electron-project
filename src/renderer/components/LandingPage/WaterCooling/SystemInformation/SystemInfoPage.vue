@@ -2,42 +2,42 @@
   <div >  
       <div >
         <fieldset style="background-color:#EBEEF5; borde-color: white;">
-          <legend style="font:8px; font-weight:800;  margin-left:15px; margin-right:15px;">ϵͳ��Ϣ</legend> 
+          <legend style="font:8px; font-weight:600;  margin-left:15px; margin-right:15px; margin-bottom:10px;">关节信息</legend> 
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�趨ģʽ</el-button>
-                  <el-input v-model="SystemData.SetMode" readonly size="mini"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节01设定</el-button>
+                  <el-input v-model="SystemData.SetJoint01" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">����ģʽ</el-button>
-                  <el-input size="mini" v-model="SystemData.RunMode" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节02设定</el-button>
+                  <el-input size="mini" v-model="SystemData.SetJoint02" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����趨</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetCool + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节03设定</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.SetJoint03" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����趨</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetHeat + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节01位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos01" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����¶�</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.CtrlTemp + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节02位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos02" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">���Ʒ�ʽ</el-button>
-                  <el-input size="mini" v-model="SystemData.CtrlMode" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节03位置</el-button>
+                  <el-input size="mini" v-model="SystemData.JointPos03" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -45,77 +45,38 @@
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��ˮ�¶�</el-button>
-                  <el-input v-bind:value="SystemData.OutWaterTemp + TempIcon" readonly size="mini"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节04设定</el-button>
+                  <el-input v-bind:value="SystemData.SetJoint04" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��ˮ�¶�</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.InWaterTemp + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节05设定</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.SetJoint05" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��ˮѹ��</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.OutWaterPress + KPaIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节06设定</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.SetJoint06" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��ˮѹ��</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.InWaterPress + KPaIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节04位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos04" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ˮ���²�</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.WaterTempDiff + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节05位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos05" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ˮѹѹ��</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.WaterPressDiff + KPaIcon" readonly/>
-                </div>
-              </el-col>
-            </el-row>
-
-            <el-row  style=" margin-left:15px; margin-right:15px;">
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����¶�</el-button>
-                  <el-input v-bind:value="SystemData.AroundTemp + TempIcon" readonly size="mini"/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ϵͳ��ˮ</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SysWaterTemp + TempIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ˮ��Ƶ��</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.PumpFreq + HzIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ˮ�õ���</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.PumpCurrent + AIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ˮ��IPM</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.PumpIPMTemp + TempIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ˮ������</el-button>
-                  <el-input size="mini" v-model="SystemData.PumpRunTime" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节06位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos06 + KPaIcon" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -123,122 +84,38 @@
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����</el-button>
-                  <el-input
-                    v-if="(SystemData.Heater==='�ر�')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.Heater"
-                    
-                  />
-                  <el-input
-                    v-else-if="(SystemData.Heater==='����')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.Heater"
-                    SuccessColor="success"
-                  />
-                  <el-input v-else size="mini" readonly v-model="SystemData.Heater" />
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节07设定</el-button>
+                  <el-input v-bind:value="SystemData.SetJoint07" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�ɽӵ�</el-button>
-                  <el-input
-                    v-if="(SystemData.WarningOut==='�ر�')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.WarningOut"
-                    
-                  />
-                  <el-input
-                    v-else-if="(SystemData.WarningOut==='����')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.WarningOut"
-                    SuccessColor="success"
-                  />
-                  <el-input v-else size="mini" readonly v-model="SystemData.WarningOut" />
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节08设定</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.SetJoint08" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ɢ�ȷ���</el-button>
-                  <el-input
-                    v-if="(SystemData.CoolingFan==='�ر�')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.CoolingFan"
-                    
-                  />
-                  <el-input
-                    v-else-if="(SystemData.CoolingFan==='����')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.CoolingFan"
-                    SuccessColor="success"
-                  />
-                  <el-input v-else size="mini" readonly v-model="SystemData.CoolingFan" />
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节09设定</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.SetJoint09" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�ֶ�ģʽ</el-button>
-                  <el-input
-                    v-if="(SystemData.ManualMode==='�ر�')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.ManualMode"
-                    
-                  />
-                  <el-input
-                    v-else-if="(SystemData.ManualMode==='����')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.ManualMode"
-                    SuccessColor="success"
-                  />
-                  <el-input v-else size="mini" readonly v-model="SystemData.ManualMode" />
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节07位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos07" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��������1</el-button>
-                  <el-input
-                    v-if="(SystemData.OilReturn1==='�ر�')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.OilReturn1"
-                    
-                  />
-                  <el-input
-                    v-else-if="(SystemData.OilReturn1==='����')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.OilReturn1"
-                    SuccessColor="success"
-                  />
-                  <el-input v-else size="mini" readonly v-model="SystemData.OilReturn1" />
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节08位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos08" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��������2</el-button>
-                  <el-input
-                    v-if="(SystemData.OilReturn2==='�ر�')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.OilReturn2"
-                    
-                  />
-                  <el-input
-                    v-else-if="(SystemData.OilReturn2==='����')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.OilReturn2"
-                    SuccessColor="success"
-                  />
-                  <el-input v-else size="mini" readonly v-model="SystemData.OilReturn2" />
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节09位置</el-button>
+                  <el-input size="mini" v-model="SystemData.JointPos09" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -246,122 +123,77 @@
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">Һ·��</el-button>
-                  <el-input
-                    v-if="(SystemData.HydraulicValve==='�ر�')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.HydraulicValve"
-                    
-                  />
-                  <el-input
-                    v-else-if="(SystemData.HydraulicValve==='����')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.HydraulicValve"
-                    SuccessColor="success"
-                  />
-                  <el-input v-else size="mini" readonly v-model="SystemData.HydraulicValve" />
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节10设定</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.SetJoint10" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ˮ·��1</el-button>
-                  <el-input
-                    v-if="(SystemData.WaterValve1==='�ر�')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.WaterValve1"
-                    
-                  />
-                  <el-input
-                    v-else-if="(SystemData.WaterValve1==='����')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.WaterValve1"
-                    SuccessColor="success"
-                  />
-                  <el-input v-else size="mini" readonly v-model="SystemData.WaterValve1" />
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节11设定</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.SetJoint11" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ˮ·��2</el-button>
-                  <el-input
-                    v-if="(SystemData.WaterValve2==='�ر�')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.WaterValve2"
-                    
-                  />
-                  <el-input
-                    v-else-if="(SystemData.WaterValve2==='����')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.WaterValve2"
-                    SuccessColor="success"
-                  />
-                  <el-input v-else size="mini" readonly v-model="SystemData.WaterValve2" />
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节12设定</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.SetJoint12" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ˮ·��3</el-button>
-                  <el-input
-                    v-if="(SystemData.WaterValve3==='�ر�')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.WaterValve3"
-                    
-                  />
-                  <el-input
-                    v-else-if="(SystemData.WaterValve3==='����')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.WaterValve3"
-                    SuccessColor="success"
-                  />
-                  <el-input v-else size="mini" readonly v-model="SystemData.WaterValve3" />
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节10位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos10" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�ͼ��ȴ�1</el-button>
-                  <el-input
-                    v-if="(SystemData.OilHeatStrip1==='�ر�')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.OilHeatStrip1"
-                    
-                  />
-                  <el-input
-                    v-else-if="(SystemData.OilHeatStrip1==='����')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.OilHeatStrip1"
-                    SuccessColor="success"
-                  />
-                  <el-input v-else size="mini" readonly v-model="SystemData.OilHeatStrip1" />
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节11位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos11" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�ͼ��ȴ�2</el-button>
-                  <el-input
-                    v-if="(SystemData.OilHeatStrip2==='�ر�')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.OilHeatStrip2"
-                    
-                  />
-                  <el-input
-                    v-else-if="(SystemData.OilHeatStrip2==='����')"
-                    size="mini"
-                    readonly
-                    v-model="SystemData.OilHeatStrip2"
-                    SuccessColor="success"
-                  />
-                  <el-input v-else size="mini" readonly v-model="SystemData.OilHeatStrip2" />
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节12位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos12" readonly/>
+                </div>
+              </el-col>
+            </el-row>
+
+            <el-row  style=" margin-left:15px; margin-right:15px;">
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节13设定</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.SetJoint13" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节14设定</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.SetJoint14" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节15设定</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.SetJoint15" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节13位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos13" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节14位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos14" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节15位置</el-button>
+                  <el-input size="mini" v-bind:value="SystemData.JointPos15" readonly/>
                 </div>
               </el-col>
             </el-row>  
@@ -370,63 +202,42 @@
 
       <div style="margin-top: 5px;">
         <fieldset style="background-color:#EBEEF5; border-color: white;"> 
-          <legend style="font:8px; font-weight:800;  margin-left:15px; margin-right:15px;">��ϵͳ1��Ϣ</legend> 
+          <legend style="font:8px; font-weight:800;  margin-left:15px; margin-right:15px; margin-bottom:10px;">电机信息</legend> 
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����¶�1</el-button>
-                  <el-input v-bind:value="FluorineData1.ExhaustGasTemp1 + TempIcon" readonly size="mini"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机01电流</el-button>
+                  <el-input v-bind:value="MotorData.Current01" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��������1</el-button>
-                  <el-input
-                    v-if="(FluorineData1.ExhaustGasProt1==='����' || FluorineData1.ExhaustGasProt1==='')"
-                    size="mini"
-                    readonly
-                    v-model="FluorineData1.ExhaustGasProt1"
-
-                  />
-                  <el-input v-else size="mini" readonly v-model="FluorineData1.ExhaustGasProt1" WarningColor="warning"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机02电流</el-button>
+                  <el-input v-bind:value="MotorData.Current02" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����¶�1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.EvaporatorTemp1 + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机03电流</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current03" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��������1</el-button>
-                  <el-input
-                    v-if="(FluorineData1.EvaporatorProt1==='����' || FluorineData1.EvaporatorProt1==='')"
-                    size="mini"
-                    readonly
-                    v-model="FluorineData1.EvaporatorProt1"
-                    
-                  />
-                  <el-input v-else size="mini" readonly v-model="FluorineData1.EvaporatorProt1" WarningColor="warning"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机01故障</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error01" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����¶�1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.CondenserTemp1 + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机02故障</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error02" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��������1</el-button>
-                  <el-input
-                    v-if="(FluorineData1.CondenserProt1==='����' || FluorineData1.CondenserProt1==='')"
-                    size="mini"
-                    readonly
-                    v-model="FluorineData1.CondenserProt1"
-                    
-                  />
-                  <el-input v-else size="mini" readonly v-model="FluorineData1.CondenserProt1" WarningColor="warning"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机03故障</el-button>
+                 <el-input size="mini" v-bind:value="MotorData.Error03" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -434,51 +245,38 @@
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����¶�1</el-button>
-                  <el-input v-bind:value="FluorineData1.SuctionTemp1 + TempIcon" readonly size="mini"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机04电流</el-button>
+                  <el-input v-bind:value="MotorData.Current04" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">Һ���¶�1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.LiquidPipeTemp1 + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机05电流</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current05 " readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��ѹѹ��1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.LowPress1 + barIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机06电流</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current06" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��ѹѹ��1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.HighPress1 + barIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机04故障</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error04" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ������1</el-button>
-                  <el-input
-                    v-if="(FluorineData1.PressProt1==='����' || FluorineData1.PressProt1==='')"
-                    size="mini"
-                    readonly
-                    v-model="FluorineData1.PressProt1"
-                    
-                  />
-                  <el-input v-else size="mini" readonly v-model="FluorineData1.PressProt1" WarningColor="warning"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机05故障</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error05" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ��AC����1</el-button>
-                  <el-input
-                    v-if="(FluorineData1.CompAcProt1==='����' || FluorineData1.CompAcProt1==='')"
-                    size="mini"
-                    readonly
-                    v-model="FluorineData1.CompAcProt1"
-                  />
-                  <el-input v-else size="mini" readonly v-model="FluorineData1.CompAcProt1" WarningColor="warning"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机06故障</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error06" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -486,38 +284,38 @@
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�������ȶ�1</el-button>
-                  <el-input v-bind:value="FluorineData1.ReverseGasOverheat1 + TempIcon" readonly size="mini"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机07电流</el-button>
+                  <el-input v-bind:value="MotorData.Current07" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�������ȶ�1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.ExhaustGasOverheat1 + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机08电流</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current08" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">���������1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.CondenserCasOverCool1 + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机09电流</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current09" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">Ŀ������1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.TargetExhaustGas1 + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机07故障</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error07" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">Ŀ������1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.TargetCondenserGas1 + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机08故障</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error08" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����ڽ׶�1</el-button>
-                  <el-input size="mini" v-model="FluorineData1.EEVStatus1" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机09故障</el-button>
+                  <el-input size="mini" v-model="MotorData.Error09" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -525,38 +323,38 @@
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">����ʼ����1</el-button>
-                  <el-input v-model="FluorineData1.EEVInitStep1" readonly size="mini"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机10电流</el-button>
+                  <el-input v-model="MotorData.Current10" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��Ŀ�꿪��1</el-button>
-                  <el-input size="mini" v-model="FluorineData1.EEVTargetStep1" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机11电流</el-button>
+                  <el-input size="mini" v-model="MotorData.Current11" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">����ǰ����1</el-button>
-                  <el-input size="mini" v-model="FluorineData1.EEVNowStep1" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机12电流</el-button>
+                  <el-input size="mini" v-model="MotorData.Current12" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">����������1</el-button>
-                  <el-input size="mini" v-model="FluorineData1.EEVAdjustStep1" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机10故障</el-button>
+                  <el-input size="mini" v-model="MotorData.Error10" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">����������1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.EEVAdjustPeriod1 + SecIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机11故障</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error11" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����ڼ�ʱ1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.EEVAdjustTime1 + SecIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机12故障</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error12" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -564,78 +362,79 @@
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">������������1</el-button>
-                  <el-input v-bind:value="FluorineData1.ReverseGasOverheatRate1 + RateIcon" readonly size="mini"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机13电流</el-button>
+                  <el-input v-bind:value="MotorData.Current13" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">������������1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.ExhaustGasOverheatRate1 + RateIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机14电流</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current14" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ˮ�±仯��1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.WaterTempRate1 + RateIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机15电流</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current15" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ���ܵ�Ƶ��1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.CompAdjustFreq1 + HzIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机13故障</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error13" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ���ܵ�����1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.CompAdjustPeriod1 + SecIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机14故障</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error14" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ��״̬1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.CompRunStatus1" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机15故障</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error15" readonly/>
                 </div>
               </el-col>
             </el-row>
 
 
-            <el-row  style=" margin-left:15px; margin-right:15px;">
+
+             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ��Ŀ��Ƶ��1</el-button>
-                  <el-input v-bind:value="FluorineData1.CompTargetFreq1 + HzIcon" readonly size="mini"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机01位置</el-button>
+                  <el-input v-bind:value="MotorData.Current01" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ������Ƶ��1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.CompRunFreq1 + HzIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机02位置</el-button>
+                  <el-input v-bind:value="MotorData.Current02" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ��IPM�¶�1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.CompIPMTemp1 + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机03位置</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current03" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ��AC����1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.CompACCurrent1 + AIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节01数据</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error01" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ������ʱ��1</el-button>
-                  <el-input size="mini" v-model="FluorineData1.CompRunTime1" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节02数据</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error02" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ��ͣ��ʱ��1</el-button>
-                  <el-input size="mini" v-model="FluorineData1.CompSoptTime1" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节03数据</el-button>
+                 <el-input size="mini" v-bind:value="MotorData.Error03" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -643,57 +442,174 @@
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">���Ŀ�����1</el-button>
-                  <el-input v-model="FluorineData1.FanTargetFreq1" readonly size="mini"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机04位置</el-button>
+                  <el-input v-bind:value="MotorData.Current04" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">������з���1</el-button>
-                  <el-input size="mini" v-model="FluorineData1.FanRunFreq1" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机05位置</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current05 " readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">���IPM�¶�1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.FanIPMTemp1 + TempIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机06位置</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current06" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">���AC����1</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData1.FanACCurrent1 + AIcon" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节04数据</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error04" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�������ʱ��1</el-button>
-                  <el-input size="mini" v-model="FluorineData1.FanRunTime1" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节05数据</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error05" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">���ֹͣʱ��1</el-button>
-                  <el-input size="mini" v-model="FluorineData1.FanSoptTime1" readonly/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节06数据</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error06" readonly/>
                 </div>
               </el-col>
-            </el-row> 
+            </el-row>
+            
+            <el-row  style=" margin-left:15px; margin-right:15px;">
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机07位置</el-button>
+                  <el-input v-bind:value="MotorData.Current07" readonly size="mini"/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机08位置</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current08" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机09位置</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current09" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节07数据</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error07" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节08数据</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error08" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节09数据</el-button>
+                  <el-input size="mini" v-model="MotorData.Error09" readonly/>
+                </div>
+              </el-col>
+            </el-row>
+
+            <el-row  style=" margin-left:15px; margin-right:15px;">
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机10位置</el-button>
+                  <el-input v-model="MotorData.Current10" readonly size="mini"/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机11位置</el-button>
+                  <el-input size="mini" v-model="MotorData.Current11" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机12位置</el-button>
+                  <el-input size="mini" v-model="MotorData.Current12" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节10数据</el-button>
+                  <el-input size="mini" v-model="MotorData.Error10" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节11数据</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error11" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节12数据</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error12" readonly/>
+                </div>
+              </el-col>
+            </el-row>
+
+            <el-row  style=" margin-left:15px; margin-right:15px;">
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机13位置</el-button>
+                  <el-input v-bind:value="MotorData.Current13" readonly size="mini"/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机14位置</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current14" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机15位置</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Current15" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节13数据</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error13" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节14数据</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error14" readonly/>
+                </div>
+              </el-col>
+              <el-col :span="4">
+                <div class="progress-box" >
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节15数据</el-button>
+                  <el-input size="mini" v-bind:value="MotorData.Error15" readonly/>
+                </div>
+              </el-col>
+            </el-row>
           </fieldset>
       </div>
 
       <div style="margin-top: 5px;">
         <fieldset style="background-color:#EBEEF5; border-color: white;"> 
-          <legend style="font:8px; font-weight:800;  margin-left:15px; margin-right:15px;">��ϵͳ2��Ϣ</legend> 
+          <legend style="font:8px; font-weight:800;  margin-left:15px; margin-right:15px; margin-bottom:10px;">其他信息</legend> 
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����¶�2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">驱动母线电压</el-button>
                   <el-input v-bind:value="FluorineData2.ExhaustGasTemp2 + TempIcon" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��������2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉1切向力</el-button>
                   <el-input
                     v-if="(FluorineData2.ExhaustGasProt2==='����' || FluorineData2.ExhaustGasProt2==='' || FluorineData2.ExhaustGasProt2===' / ')"
                     size="mini"
@@ -706,13 +622,13 @@
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����¶�2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉2切向力</el-button>
                   <el-input size="mini" v-bind:value="FluorineData2.EvaporatorTemp2 + TempIcon" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��������2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉3切向力</el-button>
                   <el-input
                     v-if="(FluorineData2.EvaporatorProt2==='����' || FluorineData2.EvaporatorProt2==='' || FluorineData2.EvaporatorProt2===' / ')"
                     size="mini"
@@ -725,13 +641,13 @@
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����¶�2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉4切向力</el-button>
                   <el-input size="mini" v-bind:value="FluorineData2.CondenserTemp2 + TempIcon" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��������2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉5切向力</el-button>
                   <el-input
                     v-if="(FluorineData2.CondenserProt2==='����'  || FluorineData2.CondenserProt2==='' || FluorineData2.CondenserProt2===' / ')"
                     size="mini"
@@ -747,31 +663,31 @@
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����¶�2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机控制模式</el-button>
                   <el-input v-bind:value="FluorineData2.SuctionTemp2 + TempIcon" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">Һ���¶�2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉1法向力</el-button>
                   <el-input size="mini" v-bind:value="FluorineData2.LiquidPipeTemp2 + TempIcon" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��ѹѹ��2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉2法向力</el-button>
                   <el-input size="mini" v-bind:value="FluorineData2.LowPress2 + barIcon" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��ѹѹ��2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉3法向力</el-button>
                   <el-input size="mini" v-bind:value="FluorineData2.HighPress2 + barIcon" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ������2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉4法向力</el-button>
                   <el-input
                     v-if="(FluorineData2.PressProt2==='����' || FluorineData2.PressProt2==='' || FluorineData2.PressProt2===' / ')"
                     size="mini"
@@ -784,7 +700,7 @@
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ��AC����2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉5法向力</el-button>
                   <el-input
                     v-if="(FluorineData2.CompAcProt2==='����' || FluorineData2.CompAcProt2==='' || FluorineData2.CompAcProt2===' / ')"
                     size="mini"
@@ -800,37 +716,37 @@
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�������ȶ�2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节复位标志</el-button>
                   <el-input v-bind:value="FluorineData2.ReverseGasOverheat2 + TempIcon" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�������ȶ�2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉1接近值</el-button>
                   <el-input size="mini" v-bind:value="FluorineData2.ExhaustGasOverheat2 + TempIcon" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">���������2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉2接近值</el-button>
                   <el-input size="mini" v-bind:value="FluorineData2.CondenserCasOverCool2 + TempIcon" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">Ŀ������2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉3接近值</el-button>
                   <el-input size="mini" v-bind:value="FluorineData2.TargetExhaustGas2 + TempIcon" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">Ŀ������2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉4接近值</el-button>
                   <el-input size="mini" v-bind:value="FluorineData2.TargetCondenserGas2 + TempIcon" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����ڽ׶�2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉5接近值</el-button>
                   <el-input size="mini" v-model="FluorineData2.EEVStatus2" readonly/>
                 </div>
               </el-col>
@@ -839,158 +755,41 @@
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">����ʼ����2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">主控故障信息</el-button>
                   <el-input v-model="FluorineData2.EEVInitStep2" readonly size="mini"/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">��Ŀ�꿪��2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉1切力方向</el-button>
                   <el-input size="mini" v-model="FluorineData2.EEVTargetStep2" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">����ǰ����2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉2切力方向</el-button>
                   <el-input size="mini" v-model="FluorineData2.EEVNowStep2" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">����������2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉3切力方向</el-button>
                   <el-input size="mini" v-model="FluorineData2.EEVAdjustStep2" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">����������2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉4切力方向</el-button>
                   <el-input size="mini" v-bind:value="FluorineData2.EEVAdjustPeriod2 + SecIcon" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�����ڼ�ʱ2</el-button>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉5切力方向</el-button>
                   <el-input size="mini" v-bind:value="FluorineData2.EEVAdjustTime2 + SecIcon" readonly/>
                 </div>
               </el-col>
             </el-row>
-
-            <el-row  style=" margin-left:15px; margin-right:15px;">
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">������������2</el-button>
-                  <el-input v-bind:value="FluorineData2.ReverseGasOverheatRate2 + RateIcon" readonly size="mini"/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">������������2</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.ExhaustGasOverheatRate2 + RateIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ˮ�±仯��2</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.WaterTempRate2 + RateIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ���ܵ�Ƶ��2</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.CompAdjustFreq2 + HzIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ���ܵ�����2</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.CompAdjustPeriod2 + SecIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ��״̬2</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.CompRunStatus2" readonly/>
-                </div>
-              </el-col>
-            </el-row>
-
-            <el-row  style=" margin-left:15px; margin-right:15px;">
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ��Ŀ��Ƶ��2</el-button>
-                  <el-input v-bind:value="FluorineData2.CompTargetFreq2 + HzIcon" readonly size="mini"/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ������Ƶ��2</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.CompRunFreq2 + HzIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ��IPM�¶�2</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.CompIPMTemp2 + TempIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ��AC����2</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.CompACCurrent2 + AIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ������ʱ��2</el-button>
-                  <el-input size="mini" v-model="FluorineData2.CompRunTime2" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">ѹ��ͣ��ʱ��2</el-button>
-                  <el-input size="mini" v-model="FluorineData2.CompSoptTime2" readonly/>
-                </div>
-              </el-col>
-            </el-row>
-
-            <el-row  style=" margin-left:15px; margin-right:15px;">
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">���Ŀ�����2</el-button>
-                  <el-input v-model="FluorineData2.FanTargetFreq2" readonly size="mini"/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">������з���2</el-button>
-                  <el-input size="mini" v-model="FluorineData2.FanRunFreq2" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">���IPM�¶�2</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.FanIPMTemp2 + TempIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">���AC����2</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.FanACCurrent2 + AIcon" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">�������ʱ��2</el-button>
-                  <el-input size="mini" v-model="FluorineData2.FanRunTime2" readonly/>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">���ֹͣʱ��2</el-button>
-                  <el-input size="mini" v-model="FluorineData2.FanSoptTime2" readonly/>
-                </div>
-              </el-col>
-            </el-row> 
           </fieldset>
       </div>
   </div>
@@ -1020,81 +819,69 @@ export default {
   data() {
     return {
       SystemData: {
-        SetMode: '',
-        RunMode: '',
-        SetCool: '',
-        SetHeat: '',
-        CtrlTemp: '',
-        CtrlMode: '',
-        OutWaterTemp: '',
-        InWaterTemp: '',
-        OutWaterPress: '',
-        InWaterPress: '',
-        WaterTempDiff: '',
-        WaterPressDiff: '',
-        AroundTemp: '',
-        SysWaterTemp: '',
-        PumpFreq: '',
-        PumpCurrent: '',
-        PumpIPMTemp: '',
-        PumpRunTime: '',
-        Heater: '',
-        WarningOut: '',
-        CoolingFan: '',
-        ManualMode: '',
-        OilReturn1: '',
-        OilReturn2: '',
-        HydraulicValve: '',
-        WaterValve1: '',
-        WaterValve2: '',
-        WaterValve3: '',
-        OilHeatStrip1: '',
-        OilHeatStrip2: '',
+        SetJoint01: '',
+        SetJoint02: '',
+        SetJoint03: '',
+        SetJoint04: '',
+        SetJoint05: '',
+        SetJoint06: '',
+        SetJoint07: '',
+        SetJoint08: '',
+        SetJoint09: '',
+        SetJoint10: '',
+        SetJoint11: '',
+        SetJoint12: '',
+        SetJoint13: '',
+        SetJoint14: '',
+        SetJoint15: '',
+        JointPos01: '',
+        JointPos02: '',
+        JointPos03: '',
+        JointPos04: '',
+        JointPos05: '',
+        JointPos06: '',
+        JointPos07: '',
+        JointPos08: '',
+        JointPos09: '',
+        JointPos10: '',
+        JointPos11: '',
+        JointPos12: '',
+        JointPos13: '',
+        JointPos14: '',
+        JointPos15: '',
       },
       
-      FluorineData1: {
-        ExhaustGasTemp1: '',
-        ExhaustGasProt1: '',
-        EvaporatorTemp1: '',
-        EvaporatorProt1: '',
-        CondenserTemp1: '',
-        CondenserProt1: '',
-        SuctionTemp1: '',
-        LiquidPipeTemp1: '',
-        LowPress1: '',
-        HighPress1: '',
-        PressProt1: '',
-        CompAcProt1: '',
-        ReverseGasOverheat1: '',
-        ExhaustGasOverheat1: '',
-        CondenserCasOverCool1: '',
-        TargetExhaustGas1: '',
-        TargetCondenserGas1: '',
-        EEVStatus1: '',
-        EEVInitStep1: '',
-        EEVTargetStep1: '',
-        EEVNowStep1: '',
-        EEVAdjustStep1: '',
-        EEVAdjustPeriod1: '',
-        EEVAdjustTime1: '',
-        ReverseGasOverheatRate1: '',
-        ExhaustGasOverheatRate1: '',
-        WaterTempRate1: '',
-        CompAdjustFreq1: '',
-        CompAdjustPeriod1: '',
-        CompRunStatus1: '',
-        CompTargetFreq1: '',
-        CompRunFreq1: '',
-        CompIPMTemp1: '',
-        CompACCurrent1: '',
-        CompRunTime1: '',
-        CompSoptTime1: '',
-        FanTargetFreq1: '',
-        FanRunFreq1: '',
-        FanIPMTemp1: '',
-        FanACCurrent1: '',
-        FanRunTime1: '',
-        FanSoptTime1: '',
+      MotorData: {
+        Current01: '',
+        Current02: '',
+        Current03: '',
+        Current04: '',
+        Current05: '',
+        Current06: '',
+        Current07: '',
+        Current08: '',
+        Current09: '',
+        Current10: '',
+        Current11: '',
+        Current12: '',
+        Current13: '',
+        Current14: '',
+        Current15: '',
+        Error01: '',
+        Error02: '',
+        Error03: '',
+        Error04: '',
+        Error05: '',
+        Error06: '',
+        Error07: '',
+        Error08: '',
+        Error09: '',
+        Error10: '',
+        Error11: '',
+        Error12: '',
+        Error13: '',
+        Error14: '',
+        Error15: '',
       },
 
       FluorineData2: {
@@ -1206,7 +993,7 @@ export default {
       if (this.$store.state.SystemData.MonitorMode === 'outdoor')
       {
         let jsonPath  //json·��
-        let csvHead = [this.SystemData, this.FluorineData1, this.ErrorData, this.FluorineData2] 
+        let csvHead = [this.SystemData, this.MotorData, this.ErrorData, this.FluorineData2] 
 
         // console.log('test1', __dirname)
         // console.log('test2', this.$store.state.SystemData.csvFilePath)
@@ -1403,105 +1190,105 @@ export default {
         this.SystemData.OilHeatStrip1 = (int16MudbusData[22-20] & (1<<5)) ? '����' : '�ر�'
         this.SystemData.OilHeatStrip2 = (int16MudbusData[22-20] & (1<<6)) ? '����' : '�ر�'
 
-        this.FluorineData1.ExhaustGasTemp1 = int16MudbusData[39-20] / 10 
-        this.FluorineData1.ExhaustGasProt1 = '����'
+        this.MotorData.ExhaustGasTemp1 = int16MudbusData[39-20] / 10 
+        this.MotorData.ExhaustGasProt1 = '����'
         switch (int16MudbusData[20-20] & 0x07)
         {
           case 0:
-            this.FluorineData1.ExhaustGasProt1 = '����'
+            this.MotorData.ExhaustGasProt1 = '����'
             break;
           case 1:
-            this.FluorineData1.ExhaustGasProt1 = '����'
+            this.MotorData.ExhaustGasProt1 = '����'
             break;
           case 2:
-            this.FluorineData1.ExhaustGasProt1 = '����'
+            this.MotorData.ExhaustGasProt1 = '����'
             break;
           case 3:
-            this.FluorineData1.ExhaustGasProt1 = '����'
+            this.MotorData.ExhaustGasProt1 = '����'
             break;
           case 4:
-            this.FluorineData1.ExhaustGasProt1 = '����'
+            this.MotorData.ExhaustGasProt1 = '����'
             break;
           case 5:
-            this.FluorineData1.ExhaustGasProt1 = '�콵'
+            this.MotorData.ExhaustGasProt1 = '�콵'
             break;
           default:
             break;
         }
-        this.FluorineData1.EvaporatorTemp1 = int16MudbusData[43-20] / 10 
+        this.MotorData.EvaporatorTemp1 = int16MudbusData[43-20] / 10 
         switch ((int16MudbusData[20-20] >> 3)& 0x07)
         {
           case 0:
-            this.FluorineData1.EvaporatorProt1 = '����'
+            this.MotorData.EvaporatorProt1 = '����'
             break;
           case 1:
-            this.FluorineData1.EvaporatorProt1 = '����'
+            this.MotorData.EvaporatorProt1 = '����'
             break;
           case 2:
-            this.FluorineData1.EvaporatorProt1 = '����'
+            this.MotorData.EvaporatorProt1 = '����'
             break;
           case 3:
-            this.FluorineData1.EvaporatorProt1 = '����'
+            this.MotorData.EvaporatorProt1 = '����'
             break;
           case 4:
-            this.FluorineData1.EvaporatorProt1 = '����'
+            this.MotorData.EvaporatorProt1 = '����'
             break;
           case 5:
-            this.FluorineData1.EvaporatorProt1 = '�콵'
+            this.MotorData.EvaporatorProt1 = '�콵'
             break;
           default:
             break;
         }
 
-        this.FluorineData1.CondenserTemp1 = int16MudbusData[42-20] / 10
-        this.FluorineData1.CondenserProt1 = '����'
+        this.MotorData.CondenserTemp1 = int16MudbusData[42-20] / 10
+        this.MotorData.CondenserProt1 = '����'
         switch ((int16MudbusData[20-20] >> 6)& 0x07)
         {
           case 0:
-            this.FluorineData1.CondenserProt1 = '����'
+            this.MotorData.CondenserProt1 = '����'
             break;
           case 1:
-            this.FluorineData1.CondenserProt1 = '����'
+            this.MotorData.CondenserProt1 = '����'
             break;
           case 2:
-            this.FluorineData1.CondenserProt1 = '����'
+            this.MotorData.CondenserProt1 = '����'
             break;
           case 3:
-            this.FluorineData1.CondenserProt1 = '����'
+            this.MotorData.CondenserProt1 = '����'
             break;
           case 4:
-            this.FluorineData1.CondenserProt1 = '����'
+            this.MotorData.CondenserProt1 = '����'
             break;
           case 5:
-            this.FluorineData1.CondenserProt1 = '�콵'
+            this.MotorData.CondenserProt1 = '�콵'
             break;
           default:
             break;
         }
 
-        this.FluorineData1.SuctionTemp1 = int16MudbusData[40-20] / 10 
-        this.FluorineData1.LiquidPipeTemp1 = int16MudbusData[41-20] / 10 
-        this.FluorineData1.LowPress1 = int16MudbusData[70-20] / 10 
-        this.FluorineData1.HighPress1 = int16MudbusData[69-20] / 10 
+        this.MotorData.SuctionTemp1 = int16MudbusData[40-20] / 10 
+        this.MotorData.LiquidPipeTemp1 = int16MudbusData[41-20] / 10 
+        this.MotorData.LowPress1 = int16MudbusData[70-20] / 10 
+        this.MotorData.HighPress1 = int16MudbusData[69-20] / 10 
         switch ((int16MudbusData[20-20] >> 9)& 0x07)
         {
           case 0:
-            this.FluorineData1.PressProt1 = '����'
+            this.MotorData.PressProt1 = '����'
             break;
           case 1:
-            this.FluorineData1.PressProt1 = '����'
+            this.MotorData.PressProt1 = '����'
             break;
           case 2:
-            this.FluorineData1.PressProt1 = '����'
+            this.MotorData.PressProt1 = '����'
             break;
           case 3:
-            this.FluorineData1.PressProt1 = '����'
+            this.MotorData.PressProt1 = '����'
             break;
           case 4:
-            this.FluorineData1.PressProt1 = '����'
+            this.MotorData.PressProt1 = '����'
             break;
           case 5:
-            this.FluorineData1.PressProt1 = '�콵'
+            this.MotorData.PressProt1 = '�콵'
             break;
           default:
             break;
@@ -1510,100 +1297,100 @@ export default {
         switch ((int16MudbusData[20-20] >> 12)& 0x07)
         {
           case 0:
-            this.FluorineData1.CompAcProt1 = '����'
+            this.MotorData.CompAcProt1 = '����'
             break;
           case 1:
-            this.FluorineData1.CompAcProt1 = '����'
+            this.MotorData.CompAcProt1 = '����'
             break;
           case 2:
-            this.FluorineData1.CompAcProt1 = '����'
+            this.MotorData.CompAcProt1 = '����'
             break;
           case 3:
-            this.FluorineData1.CompAcProt1 = '����'
+            this.MotorData.CompAcProt1 = '����'
             break;
           case 4:
-            this.FluorineData1.CompAcProt1 = '����'
+            this.MotorData.CompAcProt1 = '����'
             break;
           case 5:
-            this.FluorineData1.CompAcProt1 = '�콵'
+            this.MotorData.CompAcProt1 = '�콵'
             break;
           default:
             break;
         }
-        this.FluorineData1.ReverseGasOverheat1 = int16MudbusData[49-20] / 10 
-        this.FluorineData1.ExhaustGasOverheat1 = int16MudbusData[51-20] / 10 
-        this.FluorineData1.CondenserCasOverCool1 = int16MudbusData[53-20] / 10 
-        this.FluorineData1.TargetExhaustGas1 = int16MudbusData[112-20] / 10
-        this.FluorineData1.TargetCondenserGas1 = int16MudbusData[114-20] /10
+        this.MotorData.ReverseGasOverheat1 = int16MudbusData[49-20] / 10 
+        this.MotorData.ExhaustGasOverheat1 = int16MudbusData[51-20] / 10 
+        this.MotorData.CondenserCasOverCool1 = int16MudbusData[53-20] / 10 
+        this.MotorData.TargetExhaustGas1 = int16MudbusData[112-20] / 10
+        this.MotorData.TargetCondenserGas1 = int16MudbusData[114-20] /10
         switch (int16MudbusData[55-20])
         {
           case 0:
-            this.FluorineData1.EEVStatus1 = '��λ'
+            this.MotorData.EEVStatus1 = '��λ'
             break;
           case 1:
-            this.FluorineData1.EEVStatus1 = 'ֹͣ'
+            this.MotorData.EEVStatus1 = 'ֹͣ'
             break;
           case 2:
-            this.FluorineData1.EEVStatus1 = '����'
+            this.MotorData.EEVStatus1 = '����'
             break;
           case 3:
-            this.FluorineData1.EEVStatus1 = '����'
+            this.MotorData.EEVStatus1 = '����'
             break;
           case 4:
-            this.FluorineData1.EEVStatus1 = '����'
+            this.MotorData.EEVStatus1 = '����'
             break;
           case 5:
-            this.FluorineData1.EEVStatus1 = '�̶�'
+            this.MotorData.EEVStatus1 = '�̶�'
             break;
           case 6:
-            this.FluorineData1.EEVStatus1 = 'ͻ��'
+            this.MotorData.EEVStatus1 = 'ͻ��'
             break;
           case 7:
-            this.FluorineData1.EEVStatus1 = '���'
+            this.MotorData.EEVStatus1 = '���'
             break;
           case 8:
-            this.FluorineData1.EEVStatus1 = '�ֶ�'
+            this.MotorData.EEVStatus1 = '�ֶ�'
             break;
           default:
             break;
         }
-        this.FluorineData1.EEVInitStep1 = int16MudbusData[59-20] 
-        this.FluorineData1.EEVTargetStep1 = int16MudbusData[61-20] 
-        this.FluorineData1.EEVNowStep1 = int16MudbusData[63-20]
-        this.FluorineData1.EEVAdjustStep1 = int16MudbusData[65-20]
-        this.FluorineData1.EEVAdjustPeriod1 = int16MudbusData[57-20] 
-        this.FluorineData1.EEVAdjustTime1 = int16MudbusData[116-20] 
-        this.FluorineData1.ReverseGasOverheatRate1 = int16MudbusData[130-20] / 10
-        this.FluorineData1.ExhaustGasOverheatRate1 = int16MudbusData[132-20] / 10
-        this.FluorineData1.WaterTempRate1 = int16MudbusData[134-20] / 10
-        this.FluorineData1.CompAdjustFreq1 = int16MudbusData[136-20]
-        this.FluorineData1.CompAdjustPeriod1 = int16MudbusData[138-20] 
+        this.MotorData.EEVInitStep1 = int16MudbusData[59-20] 
+        this.MotorData.EEVTargetStep1 = int16MudbusData[61-20] 
+        this.MotorData.EEVNowStep1 = int16MudbusData[63-20]
+        this.MotorData.EEVAdjustStep1 = int16MudbusData[65-20]
+        this.MotorData.EEVAdjustPeriod1 = int16MudbusData[57-20] 
+        this.MotorData.EEVAdjustTime1 = int16MudbusData[116-20] 
+        this.MotorData.ReverseGasOverheatRate1 = int16MudbusData[130-20] / 10
+        this.MotorData.ExhaustGasOverheatRate1 = int16MudbusData[132-20] / 10
+        this.MotorData.WaterTempRate1 = int16MudbusData[134-20] / 10
+        this.MotorData.CompAdjustFreq1 = int16MudbusData[136-20]
+        this.MotorData.CompAdjustPeriod1 = int16MudbusData[138-20] 
         switch (int16MudbusData[140-20])
         {
           case 0:
-            this.FluorineData1.CompRunStatus1 = '����'
+            this.MotorData.CompRunStatus1 = '����'
             break;
           case 1:
-            this.FluorineData1.CompRunStatus1 = '����'
+            this.MotorData.CompRunStatus1 = '����'
             break;
           case 2:
-            this.FluorineData1.CompRunStatus1 = 'ж��'
+            this.MotorData.CompRunStatus1 = 'ж��'
             break;
           default:
             break;
         }
-        this.FluorineData1.CompTargetFreq1 = int16MudbusData[84-20] 
-        this.FluorineData1.CompRunFreq1 = int16MudbusData[85-20] 
-        this.FluorineData1.CompIPMTemp1 = int16MudbusData[90-20] / 10 
-        this.FluorineData1.CompACCurrent1 = int16MudbusData[87-20] / 10 
-        this.FluorineData1.CompRunTime1 = changetime(int16MudbusData[88-20]) 
-        this.FluorineData1.CompSoptTime1 = changetime(int16MudbusData[89-20]) 
-        this.FluorineData1.FanTargetFreq1 = int16MudbusData[98-20]  
-        this.FluorineData1.FanRunFreq1 = int16MudbusData[99-20] 
-        this.FluorineData1.FanIPMTemp1 = int16MudbusData[102-20] / 10 
-        this.FluorineData1.FanACCurrent1 = int16MudbusData[124-20] / 10 
-        this.FluorineData1.FanRunTime1 = changetime(int16MudbusData[106-20]) 
-        this.FluorineData1.FanSoptTime1 = changetime(int16MudbusData[108-20]) 
+        this.MotorData.CompTargetFreq1 = int16MudbusData[84-20] 
+        this.MotorData.CompRunFreq1 = int16MudbusData[85-20] 
+        this.MotorData.CompIPMTemp1 = int16MudbusData[90-20] / 10 
+        this.MotorData.CompACCurrent1 = int16MudbusData[87-20] / 10 
+        this.MotorData.CompRunTime1 = changetime(int16MudbusData[88-20]) 
+        this.MotorData.CompSoptTime1 = changetime(int16MudbusData[89-20]) 
+        this.MotorData.FanTargetFreq1 = int16MudbusData[98-20]  
+        this.MotorData.FanRunFreq1 = int16MudbusData[99-20] 
+        this.MotorData.FanIPMTemp1 = int16MudbusData[102-20] / 10 
+        this.MotorData.FanACCurrent1 = int16MudbusData[124-20] / 10 
+        this.MotorData.FanRunTime1 = changetime(int16MudbusData[106-20]) 
+        this.MotorData.FanSoptTime1 = changetime(int16MudbusData[108-20]) 
 
         //��ϵͳ2��Ϣ
         if (int16MudbusData[32-20] & 0x400)
@@ -1787,13 +1574,13 @@ export default {
           switch (int16MudbusData[141-20])
           {
             case 0:
-              this.FluorineData1.CompRunStatus2 = '����'
+              this.MotorData.CompRunStatus2 = '����'
               break;
             case 1:
-              this.FluorineData1.CompRunStatus2 = '����'
+              this.MotorData.CompRunStatus2 = '����'
               break;
             case 2:
-              this.FluorineData1.CompRunStatus2 = 'ж��'
+              this.MotorData.CompRunStatus2 = 'ж��'
               break;
             default:
               break;
