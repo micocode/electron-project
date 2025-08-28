@@ -24,7 +24,7 @@
             <fieldset fieldset style=" border-color: white; height: 200px">
               <el-tabs type="border-card"  style=" height: 195px">
                 <el-tab-pane style="height:110px" label="灵巧手控制"><SetHand></SetHand></el-tab-pane>
-                <el-tab-pane style="height:110px" label="设置关节绝对位置"><SetJointAbsPos></SetJointAbsPos></el-tab-pane>
+                <el-tab-pane style="height:110px" label="关节位置控制"><SetJointAbsPos></SetJointAbsPos></el-tab-pane>
                 <el-tab-pane style="height:110px" label="设置电机绝对位置"><SetMotorAbsPos></SetMotorAbsPos></el-tab-pane>
                 <el-tab-pane style="height:110px" label="设置电机增量位置"><SetMotorIncPos></SetMotorIncPos></el-tab-pane>
                 <el-tab-pane style="height:110px" label="电机开关/零点/校准"><SetMotorRunParam></SetMotorRunParam></el-tab-pane>

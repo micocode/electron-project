@@ -1344,50 +1344,68 @@ export default {
                 this.OtherData.MotorCtrl = '关节闭环模式';
             }
 
+    
             uint32MudbusData = (uint16MudbusData[0x8D-0x8d] << 16) | uint16MudbusData[0x8E-0x8d];
-            this.SystemData.SetJoint01 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint01 = (uint32MudbusData === 0) ? 0 + ' °': ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint01 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0x8F-0x8d] << 16) | uint16MudbusData[0x90-0x8d];
-            this.SystemData.SetJoint02 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint02 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint02 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0x91-0x8d] << 16) | uint16MudbusData[0x92-0x8d];
-            this.SystemData.SetJoint03 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint03 = (uint32MudbusData === 0) ? 0 + ' °':(uint32MudbusData === 0) ? 0 :((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint03 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0x93-0x8d] << 16) | uint16MudbusData[0x94-0x8d];
-            this.SystemData.SetJoint04 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint04 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint04 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0x95-0x8d] << 16) | uint16MudbusData[0x96-0x8d];
-            this.SystemData.SetJoint05 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint05 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint05 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0x97-0x8d] << 16) | uint16MudbusData[0x98-0x8d];
-            this.SystemData.SetJoint06 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint06 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint06 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0x99-0x8d] << 16) | uint16MudbusData[0x9A-0x8d];
-            this.SystemData.SetJoint07 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint07 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint07 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0x9B-0x8d] << 16) | uint16MudbusData[0x9C-0x8d];
-            this.SystemData.SetJoint08 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint08 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint08 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0x9D-0x8d] << 16) | uint16MudbusData[0x9E-0x8d];
-            this.SystemData.SetJoint09 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint09 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint09 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0x9F-0x8d] << 16) | uint16MudbusData[0xA0-0x8d];
-            this.SystemData.SetJoint10 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint10 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint10 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0xA1-0x8d] << 16) | uint16MudbusData[0xA2-0x8d];
-            this.SystemData.SetJoint11 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint11 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint11 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0xA3-0x8d] << 16) | uint16MudbusData[0xA4-0x8d];
-            this.SystemData.SetJoint12 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint12 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint12 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0xA5-0x8d] << 16) | uint16MudbusData[0xA6-0x8d];
-            this.SystemData.SetJoint13 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint13 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint13 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0xA7-0x8d] << 16) | uint16MudbusData[0xA8-0x8d];
-            this.SystemData.SetJoint14 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint14 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint14 = uint32MudbusData.toString() + ' °';
 
             uint32MudbusData = (uint16MudbusData[0xA9-0x8d] << 16) | uint16MudbusData[0xAA-0x8d];
-            this.SystemData.SetJoint15 = uint32MudbusData.toString() + ' °';
+            this.SystemData.SetJoint15 = (uint32MudbusData === 0) ? 0 + ' °':((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+            //this.SystemData.SetJoint15 = uint32MudbusData.toString() + ' °';
+          
+           
         } 
 
         //save Excel time

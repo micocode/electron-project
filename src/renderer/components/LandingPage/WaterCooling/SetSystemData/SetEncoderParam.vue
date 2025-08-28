@@ -284,7 +284,7 @@
 <script>
   import { ipcRenderer } from 'electron'
   import {
-    APP_SEND_SIGNAL_DATA_06_CMD,
+    APP_TOUCH_BUTTON_SEND_MULT_CMD,
   } from '../../../../js/constants/IndoorConstants'
 export default {
   name: "OutTable",
@@ -340,7 +340,7 @@ export default {
         default:
           break;
       }
-      ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
+      ipcRenderer.send(APP_TOUCH_BUTTON_SEND_MULT_CMD, {
         Length: this.DataType.Length,
         Address: this.DataType.Address,
         Data: this.DataType.Data,
@@ -383,7 +383,7 @@ export default {
         default:
           break;
       }
-      ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
+      ipcRenderer.send(APP_TOUCH_BUTTON_SEND_MULT_CMD, {
         Length: this.DataType.Length,
         Address: this.DataType.Address,
         Data: this.DataType.Data,
@@ -426,7 +426,7 @@ export default {
         default:
           break;
       }
-      ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
+      ipcRenderer.send(APP_TOUCH_BUTTON_SEND_MULT_CMD, {
         Length: this.DataType.Length,
         Address: this.DataType.Address,
         Data: this.DataType.Data,
@@ -469,7 +469,7 @@ export default {
         default:
           break;
       }
-      ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
+      ipcRenderer.send(APP_TOUCH_BUTTON_SEND_MULT_CMD, {
         Length: this.DataType.Length,
         Address: this.DataType.Address,
         Data: this.DataType.Data,
@@ -512,7 +512,7 @@ export default {
         default:
           break;
       }
-      ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
+      ipcRenderer.send(APP_TOUCH_BUTTON_SEND_MULT_CMD, {
         Length: this.DataType.Length,
         Address: this.DataType.Address,
         Data: this.DataType.Data,
@@ -555,7 +555,7 @@ export default {
         default:
           break;
       }
-      ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
+      ipcRenderer.send(APP_TOUCH_BUTTON_SEND_MULT_CMD, {
         Length: this.DataType.Length,
         Address: this.DataType.Address,
         Data: this.DataType.Data,
@@ -598,7 +598,7 @@ export default {
         default:
           break;
       }
-      ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
+      ipcRenderer.send(APP_TOUCH_BUTTON_SEND_MULT_CMD, {
         Length: this.DataType.Length,
         Address: this.DataType.Address,
         Data: this.DataType.Data,
@@ -641,7 +641,7 @@ export default {
         default:
           break;
       }
-      ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
+      ipcRenderer.send(APP_TOUCH_BUTTON_SEND_MULT_CMD, {
         Length: this.DataType.Length,
         Address: this.DataType.Address,
         Data: this.DataType.Data,

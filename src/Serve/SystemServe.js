@@ -55,20 +55,22 @@ export class IPCSystemWin{
 
     /* 串口数据处理函数，在后端进行数据包的校验，校验没有问题，在发给前端进行协议解析 */
     UartRecvHandle (recvBuff) {
-      
-        /* 进行数据处理 */
         let RecvDataArray = recvBuff;
-
-  
         RecvDataArray = RecvDataArray.slice(0, RecvDataArray.length - 2);
         let crc16 = crc.crc16(RecvDataArray, 0xFFFF);
-         
-        if (recvBuff[recvBuff.length - 1] == ((crc16 & 0xff00) >> 8) && recvBuff[recvBuff.length - 2] == (crc16 & 0xff))
-        {
-            console.log("recv data:", recvBuff.length);
-            this._sendIPCMsg(IndoorIPCMsg.APP_REPORT_UART_DATA, recvBuff);
-            // switch (this.MessageCtrl.op_type)
-            // {
+        if (recvBuff[recvBuff.length - 1] == ((crc16 & 0xff00) >> 8) && recvBuff[recvBuff.length - 2] == (crc16 & 0xff)) {
+            //console.log("recv data:", recvBuff.length);
+            switch (this.MessageCtrl.op_type) {
+                case 'write_0x06_cmd':
+                    this.MessageCtrl.op_type = 'idle'
+                    break;
+                case 'write_0x10_cmd':
+                    this.MessageCtrl.op_type = 'idle'
+                    break;
+                case 'idle':
+                    this._sendIPCMsg(IndoorIPCMsg.APP_REPORT_UART_DATA, recvBuff);
+                    break; 
+            }
             //     case 'read_param':
             //         if (recvBuff.length <= 50)
             //         {
@@ -198,27 +200,163 @@ export class IPCSystemWin{
      * 设置IPC监听
      */
     _setIPCListenOn() {
-
-        //发送单个06写数据指令
-        ipcMain.on(IndoorIPCMsg.APP_SEND_SIGNAL_DATA_06_CMD, (evnt, args) => {
+        // Touch Button Send Single Cmd
+        ipcMain.on(IndoorIPCMsg.APP_TOUCH_BUTTON_SEND_SINGLE_CMD, (evnt, args) => {
             console.log(args);
-
+             if (typeof global.Mode === 'undefined') {
+                global.Mode = 0;
+            }
             let tmpBuffer = [];
-            tmpBuffer[0] = 0x01;
-            tmpBuffer[1] = 0x06;
-            tmpBuffer[2] = (args.Address & 0xFF00) >> 8;
-            tmpBuffer[3] = args.Address & 0x00FF;
-            tmpBuffer[4] = (args.Data & 0xFF00) >> 8;
-            tmpBuffer[5] = args.Data & 0x00FF;
-            let crc16 = crc.crc16(tmpBuffer, 0xFFFF);
-            let cmdUartSendBuffer = tmpBuffer.concat((crc16 & 0xff)).concat(((crc16 & 0xff00) >> 8));
+            let crc16Data;
+            let cmdUartSendBuffer;
+            if (args.CmdType === 'JointResetCmd') {
+                console.log('JointResetCmd');
+            } else if (args.CmdType === 'ModeSwitchCmd') {
+                tmpBuffer[0] = 0x01;
+                tmpBuffer[1] = 0x06;
+                tmpBuffer[2] = 0x00;
+                tmpBuffer[3] = 0xAB;
+                if (global.Mode === 0) {
+                    global.Mode = 1;
+                } else {
+                    global.Mode = 0;
+                }
+                tmpBuffer[4] = global.Mode >> 8;
+                tmpBuffer[5] = global.Mode & 0xFF;
+                crc16Data = crc.crc16(tmpBuffer, 0xFFFF);
+                cmdUartSendBuffer = tmpBuffer.concat((crc16Data & 0xff)).concat(((crc16Data & 0xff00) >> 8));
+                this.sendMsgQueue.Enqueue(cmdUartSendBuffer);
+                this.MessageCtrl.op_type = 'write_0x06_cmd';
+                //console.log('cmdUartSendBuffer', Buffer.from(cmdUartSendBuffer).toString('hex').match(/.{1,2}/g).join(' '));
+            } else if (args.CmdType === 'FlashSaveCmd') {
+                //console.log('FlashSaveCmd');
+                tmpBuffer[0] = 0x01;
+                tmpBuffer[1] = 0x06;
+                tmpBuffer[2] = 0x00;
+                tmpBuffer[3] = 0x04;
+                tmpBuffer[4] = 0x00;
+                tmpBuffer[5] = 0x01;
+                crc16Data = crc.crc16(tmpBuffer, 0xFFFF);
+                cmdUartSendBuffer = tmpBuffer.concat((crc16Data & 0xff)).concat(((crc16Data & 0xff00) >> 8));
+                this.sendMsgQueue.Enqueue(cmdUartSendBuffer);
+                this.MessageCtrl.op_type = 'write_0x06_cmd';
+                //console.log('cmdUartSendBuffer', Buffer.from(cmdUartSendBuffer).toString('hex').match(/.{1,2}/g).join(' '));
+            } else if (args.CmdType === 'ZoreCheckCmd') {
+                tmpBuffer[0] = 0x01;
+                tmpBuffer[1] = 0x06;
+                tmpBuffer[2] = 0x00;
+                tmpBuffer[3] = 0x05;
+                tmpBuffer[4] = 0x00;
+                tmpBuffer[5] = 0x01;
+                crc16Data = crc.crc16(tmpBuffer, 0xFFFF);
+                cmdUartSendBuffer = tmpBuffer.concat((crc16Data & 0xff)).concat(((crc16Data & 0xff00) >> 8));
+                this.sendMsgQueue.Enqueue(cmdUartSendBuffer);
+                this.MessageCtrl.op_type = 'write_0x06_cmd';
+                //console.log('cmdUartSendBuffer', Buffer.from(cmdUartSendBuffer).toString('hex').match(/.{1,2}/g).join(' '));
+            } else if (args.CmdType === 'ClearErrorCmd') {
+                tmpBuffer[0] = 0x01;
+                tmpBuffer[1] = 0x06;
+                tmpBuffer[2] = 0x00;
+                tmpBuffer[3] = 0x03;
+                tmpBuffer[4] = 0x00;
+                tmpBuffer[5] = 0x01;
+                crc16Data = crc.crc16(tmpBuffer, 0xFFFF);
+                cmdUartSendBuffer = tmpBuffer.concat((crc16Data & 0xff)).concat(((crc16Data & 0xff00) >> 8));
+                this.sendMsgQueue.Enqueue(cmdUartSendBuffer);
+                this.MessageCtrl.op_type = 'write_0x06_cmd';
+                //console.log('cmdUartSendBuffer', Buffer.from(cmdUartSendBuffer).toString('hex').match(/.{1,2}/g).join(' '));
+            } else if (args.CmdType === 'ReadyCmd') {
+                tmpBuffer[0] = 0x01;
+                tmpBuffer[1] = 0x06;
+                tmpBuffer[2] = 0x00;
+                tmpBuffer[3] = 0x00;
+                tmpBuffer[4] = 0x00;
+                tmpBuffer[5] = 0x01;
+                crc16Data = crc.crc16(tmpBuffer, 0xFFFF);
+                cmdUartSendBuffer = tmpBuffer.concat((crc16Data & 0xff)).concat(((crc16Data & 0xff00) >> 8));
+                this.sendMsgQueue.Enqueue(cmdUartSendBuffer);
+                this.MessageCtrl.op_type = 'write_0x06_cmd';
+                //console.log('cmdUartSendBuffer', Buffer.from(cmdUartSendBuffer).toString('hex').match(/.{1,2}/g).join(' '));
+            }
+        });
 
-            this.MessageCtrl.Message0x06Buffer = cmdUartSendBuffer;
-            this.sendMsgQueue.Enqueue(cmdUartSendBuffer);  
-            this.MessageCtrl.op_type = 'write_0x06_cmd';
-
-          //  console.log("this.MessageCtrl.Message0x06Buffer:", this.MessageCtrl.Message0x06Buffer);
-            
+        //Touch Button Send Multiple cmd
+        ipcMain.on(IndoorIPCMsg.APP_TOUCH_BUTTON_SEND_MULT_CMD, (evnt, args) => {
+            console.log(args);
+            let tmpBuffer = [];
+            let crc16Data;
+            let cmdUartSendBuffer;
+            if (args.CmdType === 'SetMotorEnableCmd') {
+                tmpBuffer[0] = 0x01;
+                tmpBuffer[1] = 0x10;
+                tmpBuffer[2] = 0x00;
+                tmpBuffer[3] = 0x15;
+                tmpBuffer[4] = 0x00;
+                tmpBuffer[5] = 0x0F;
+                tmpBuffer[6] = 0x0F * 2;
+                for (let i = 0; i < 15; i++) {
+                    tmpBuffer[7 + i*2] = args.Data[i] >> 8;
+                    tmpBuffer[8 + i*2] = args.Data[i] & 0xFF;
+                }
+                crc16Data = crc.crc16(tmpBuffer, 0xFFFF);
+                cmdUartSendBuffer = tmpBuffer.concat((crc16Data & 0xff)).concat(((crc16Data & 0xff00) >> 8));
+                this.sendMsgQueue.Enqueue(cmdUartSendBuffer);
+                this.MessageCtrl.op_type = 'write_0x10_cmd';  
+                //console.log('cmdUartSendBuffer', Buffer.from(cmdUartSendBuffer).toString('hex').match(/.{1,2}/g).join(' '));
+            } else if (args.CmdType === 'ResetZeroPointCmd') {
+                tmpBuffer[0] = 0x01;
+                tmpBuffer[1] = 0x10;
+                tmpBuffer[2] = 0x00;
+                tmpBuffer[3] = 0x6F;
+                tmpBuffer[4] = 0x00;
+                tmpBuffer[5] = 0x0F;
+                tmpBuffer[6] = 0x0F * 2;
+                for (let i = 0; i < 15; i++) {
+                    tmpBuffer[7 + i*2] = args.Data[i] >> 8;
+                    tmpBuffer[8 + i*2] = args.Data[i] & 0xFF;
+                }
+                crc16Data = crc.crc16(tmpBuffer, 0xFFFF);
+                cmdUartSendBuffer = tmpBuffer.concat((crc16Data & 0xff)).concat(((crc16Data & 0xff00) >> 8));
+                this.sendMsgQueue.Enqueue(cmdUartSendBuffer);
+                this.MessageCtrl.op_type = 'write_0x10_cmd';  
+                //console.log('cmdUartSendBuffer', Buffer.from(cmdUartSendBuffer).toString('hex').match(/.{1,2}/g).join(' '));
+            } else if (args.CmdType === 'ZeroPointCheckCmd') {
+                tmpBuffer[0] = 0x01;
+                tmpBuffer[1] = 0x10;
+                tmpBuffer[2] = 0x00;
+                tmpBuffer[3] = 0x7E;
+                tmpBuffer[4] = 0x00;
+                tmpBuffer[5] = 0x0F;
+                tmpBuffer[6] = 0x0F * 2;
+                for (let i = 0; i < 15; i++) {
+                    tmpBuffer[7 + i*2] = args.Data[i] >> 8;
+                    tmpBuffer[8 + i*2] = args.Data[i] & 0xFF;
+                }
+                crc16Data = crc.crc16(tmpBuffer, 0xFFFF);
+                cmdUartSendBuffer = tmpBuffer.concat((crc16Data & 0xff)).concat(((crc16Data & 0xff00) >> 8));
+                this.sendMsgQueue.Enqueue(cmdUartSendBuffer);
+                this.MessageCtrl.op_type = 'write_0x10_cmd';  
+                //console.log('cmdUartSendBuffer', Buffer.from(cmdUartSendBuffer).toString('hex').match(/.{1,2}/g).join(' '));
+            } else if (args.CmdType === 'SetMotorIncPosCmd') {
+                tmpBuffer[0] = 0x01;
+                tmpBuffer[1] = 0x10;
+                tmpBuffer[2] = 0x00;
+                tmpBuffer[3] = 0x51;
+                tmpBuffer[4] = 0x00;
+                tmpBuffer[5] = 0x1E;
+                tmpBuffer[6] = 0x1E * 2;
+                for (let i = 0; i < 15; i++) {
+                    tmpBuffer[7 + i*4] = args.Data[i] >> 24;
+                    tmpBuffer[8 + i*4] = args.Data[i] >> 16;
+                    tmpBuffer[9 + i*4] = args.Data[i] >> 8;
+                    tmpBuffer[10 + i*4] = args.Data[i] & 0xFF;
+                }
+                crc16Data = crc.crc16(tmpBuffer, 0xFFFF);
+                cmdUartSendBuffer = tmpBuffer.concat((crc16Data & 0xff)).concat(((crc16Data & 0xff00) >> 8));
+                this.sendMsgQueue.Enqueue(cmdUartSendBuffer);
+                this.MessageCtrl.op_type = 'write_0x10_cmd';  
+                //console.log('cmdUartSendBuffer', Buffer.from(cmdUartSendBuffer).toString('hex').match(/.{1,2}/g).join(' '));
+            }
         });
 
         //发送写系统参数
@@ -240,26 +378,6 @@ export class IPCSystemWin{
             this.MessageCtrl.op_type = 'write_0x06_cmd';  
         });
 
-         //监控数据
-         ipcMain.on(IndoorIPCMsg.APP_WATCH_DATA, (evnt, args) => {
-           
-            // console.log("args", args);
-
-            this.MessageCtrl.WatchAddr1 = args.addr[0];
-            this.MessageCtrl.WatchAddr2 = args.addr[1];
-            this.MessageCtrl.WatchAddr3 = args.addr[2];
-            this.MessageCtrl.WatchAddr4 = args.addr[3];
-            this.MessageCtrl.WatchAddr5 = args.addr[4];
-
-
-            // console.log("this.MessageCtrl.WatchAddr1", this.MessageCtrl.WatchAddr1);
-            // console.log("this.MessageCtrl.WatchAddr2", this.MessageCtrl.WatchAddr2);
-            // console.log("this.MessageCtrl.WatchAddr3", this.MessageCtrl.WatchAddr3);
-            // console.log("this.MessageCtrl.WatchAddr4", this.MessageCtrl.WatchAddr4);
-            // console.log("this.MessageCtrl.WatchAddr5", this.MessageCtrl.WatchAddr5);
-
-        });
-
         
 
         //发送读系统参数
@@ -279,50 +397,9 @@ export class IPCSystemWin{
         });
 
 
-        // 设置修改手动参数
-        ipcMain.on(IndoorIPCMsg.APP_CMD_SET_MANUAL_DATA, (evnt, args) => {
-            console.log(args);
-            let tmpBuffer1 = [];
+       
 
-            tmpBuffer1[0] = 0x01;
-            tmpBuffer1[1] = 0x10;
-            tmpBuffer1[2] = 0x00;
-            tmpBuffer1[3] = 0xC4;
-            tmpBuffer1[4] = 0x00;
-            tmpBuffer1[5] = 0x0B;
-            tmpBuffer1[6] = 22;
-
-            for (var i = 0; i < 10; i++) {
-                tmpBuffer1[7 + i*2] = (args.Data[i] & 0xFF00) >> 8;
-                tmpBuffer1[8 + i*2] = args.Data[i] & 0x00FF;
-            } 
-            tmpBuffer1[7 + (20)] = (args.Manual & 0xFF00) >> 8;
-            tmpBuffer1[8 + (20)] = args.Manual & 0x00FF;
-            let crc16Data1 = crc.crc16(tmpBuffer1, 0xFFFF);
-            let cmdUartSendBuffer1 = tmpBuffer1.concat((crc16Data1 & 0xff)).concat(((crc16Data1 & 0xff00) >> 8));
-            this.MessageCtrl.Message0x10Buffer1 = cmdUartSendBuffer1;
-            this.sendMsgQueue.Enqueue(cmdUartSendBuffer1);
-
-            let tmpBuffer2 = [];
-            tmpBuffer2[0] = 0x01;
-            tmpBuffer2[1] = 0x10;
-            tmpBuffer2[2] = 0x00;
-            tmpBuffer2[3] = 0xFA;
-            tmpBuffer2[4] = 0x00;
-            tmpBuffer2[5] = 0x01;
-            tmpBuffer2[6] = (0x01 * 2);
-            tmpBuffer2[7] = (args.Relay & 0xFF00) >> 8;
-            tmpBuffer2[8] = args.Relay & 0x00FF;
-            let crc16Data2 = crc.crc16(tmpBuffer2, 0xFFFF);
-            let cmdUartSendBuffer2 = tmpBuffer2.concat((crc16Data2 & 0xff)).concat(((crc16Data2 & 0xff00) >> 8));
-            this.MessageCtrl.Message0x10Buffer2 = cmdUartSendBuffer2;
-            this.sendMsgQueue.Enqueue(cmdUartSendBuffer2);
-            this.MessageCtrl.op_type = 'write_0x10_cmd';
-         });
-
-
-
-        /* 载入文件 */
+        //Save File
         ipcMain.on(IndoorIPCMsg.APP_CMD_MEM_INDOOR_LOAD_FILE, (event, args) => {
             dialog.showOpenDialog(
                 {
@@ -397,7 +474,6 @@ export class IPCSystemWin{
                         if (!this.sendMsgQueue.IsEmpty()) {
                             UartSendBuffer(this.sendMsgQueue.Dequeue(), 0);   
                         } else {
-                            
                             if (this.MessageCtrl.SetTimeoutNum === 0) {
                                 let cmdDataBuffer = [0x01, 0x04, 0x10, 0x03, 0x00, 0x5D];
                                 let crc16 = crc.crc16(cmdDataBuffer, 0xFFFF);

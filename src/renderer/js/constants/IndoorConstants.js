@@ -13,7 +13,7 @@ export const APP_CMD_UART_INDOOR_CONNECT    = "uart-indoor-connect"    // 连接
 export const APP_CMD_UART_INDOOR_DISCONN    = "uart-indoor-disconn"    // 断开串口连接
 export const APP_CMD_UART_INDOOR_COMM_SEND  = "uart-indoor-comm-send"  // 串口通用数据发送命令
 export const APP_CMD_UART_INDOOR_SEND_QUERY = "uart-indoor-send-query" // 串口发送查询命令
-export const APP_SEND_SIGNAL_DATA_06_CMD       = "memory-indoor-write"    // 写内存
+export const APP_TOUCH_BUTTON_SEND_MULT_CMD       = "memory-indoor-write"    // 写内存
 export const APP_CMD_MEM_INDOOR_READ        = "memory-indoor-read"     // 读内存
 export const APP_CMD_MEM_INDOOR_LOAD_FILE   = "memory-indoor-loadfile" // 加载bin文件
 
@@ -21,7 +21,7 @@ export const  APP_CMD_LOAD_FILE_NAME        = "indoor-loadfile-name" // 加载bi
 
 
 export const APP_CMD_GET_MANUAL_DATA        = "get-manual-data"         // 设置手动参数
-export const APP_CMD_SET_MANUAL_DATA        = "set-manual-data"         // 设置手动参数
+export const APP_TOUCH_BUTTON_SEND_SINGLE_CMD        = "set-manual-data"         // 设置手动参数
 export const APP_CMD_SET_WIRTE_SYSTEM_DATA  = "set-wirte-system-data"   // 设置系统参数
 export const APP_CMD_SET_READ_SYSTEM_DATA   = "set-read-system-data"    // 设置系统参数
 export const APP_CMD_GET_SYSTEM_DATA        = "get-system-data"         // 设置系统参数

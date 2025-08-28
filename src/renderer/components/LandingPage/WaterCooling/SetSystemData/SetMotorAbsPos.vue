@@ -126,7 +126,7 @@
 <script>
 import InputNumber from '@/components/InputNumber'
 import { ipcRenderer } from 'electron'
-import { APP_CMD_SET_MANUAL_DATA } from '../../../../js/constants/IndoorConstants'
+import { APP_TOUCH_BUTTON_SEND_SINGLE_CMD } from '../../../../js/constants/IndoorConstants'
 import { EventBus } from "../../../../Utils/EventBus"
 export default {
    data () {
@@ -235,7 +235,7 @@ export default {
       }
 
 
-      ipcRenderer.send(APP_CMD_SET_MANUAL_DATA, {
+      ipcRenderer.send(APP_TOUCH_BUTTON_SEND_SINGLE_CMD, {
         Data: this.ManualDataType.Data,
         Manual: this.ManualDataType.ManualOnOffByte,
         Relay: this.ManualDataType.RelayOnOffByte

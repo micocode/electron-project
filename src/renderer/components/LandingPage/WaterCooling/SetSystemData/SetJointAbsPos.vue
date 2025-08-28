@@ -1,118 +1,118 @@
 <template>
   <div class="manual-set">
-    <el-row  style="margin-top:5px; ">
+    <el-row  style="margin-top:0px; ">
       <el-col :span="2"><el-button type="text" style="margin-right:3px;"></el-button ></el-col>
       <el-col :span="4">
         <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节01绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节01绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
         </div>
       </el-col>
       <el-col :span="4">
         <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节02绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节02绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[1]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
         </div>
       </el-col>
       <el-col :span="4">
         <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节03绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节03绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[2]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
         </div>
       </el-col>
       <el-col :span="4">
         <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节04绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节04绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[3]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
         </div>
       </el-col>
       <el-col :span="4">
         <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节05绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
-        </div>
-      </el-col>
-      <el-col :span="2"><el-button type="text" style="margin-right:3px;"></el-button ></el-col>
-    </el-row>
-
-        <el-row  style="margin-top:5px; ">
-      <el-col :span="2"><el-button type="text" style="margin-right:3px;"></el-button ></el-col>
-      <el-col :span="4">
-        <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节06绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
-        </div>
-      </el-col>
-      <el-col :span="4">
-        <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节07绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
-        </div>
-      </el-col>
-      <el-col :span="4">
-        <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节08绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
-        </div>
-      </el-col>
-      <el-col :span="4">
-        <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节09绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
-        </div>
-      </el-col>
-      <el-col :span="4">
-        <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节10绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节05绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[4]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
         </div>
       </el-col>
       <el-col :span="2"><el-button type="text" style="margin-right:3px;"></el-button ></el-col>
     </el-row>
 
-        <el-row  style="margin-top:5px; ">
+        <el-row  style="margin-top:0px; ">
       <el-col :span="2"><el-button type="text" style="margin-right:3px;"></el-button ></el-col>
       <el-col :span="4">
         <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节11绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节06绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[5]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
         </div>
       </el-col>
       <el-col :span="4">
         <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节12绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节07绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[6]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
         </div>
       </el-col>
       <el-col :span="4">
         <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节13绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节08绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[7]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
         </div>
       </el-col>
       <el-col :span="4">
         <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节14绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节09绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[8]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
         </div>
       </el-col>
       <el-col :span="4">
         <div class="progress-box" style="margin-right: 10px;">
-          <el-button type="text" style="margin-right:3px;">设置关节15绝对位置:</el-button >
-          <InputNumber :inputs.sync="ManualDataType.Data[0]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节10绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[9]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
         </div>
       </el-col>
       <el-col :span="2"><el-button type="text" style="margin-right:3px;"></el-button ></el-col>
     </el-row>
 
-    <el-row  style="margin-top:5px; " type="flex" justify="center">
+        <el-row  style="margin-top:0px; ">
+      <el-col :span="2"><el-button type="text" style="margin-right:3px;"></el-button ></el-col>
+      <el-col :span="4">
+        <div class="progress-box" style="margin-right: 10px;">
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节11绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[10]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+        </div>
+      </el-col>
+      <el-col :span="4">
+        <div class="progress-box" style="margin-right: 10px;">
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节12绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[11]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+        </div>
+      </el-col>
+      <el-col :span="4">
+        <div class="progress-box" style="margin-right: 10px;">
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节13绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[12]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+        </div>
+      </el-col>
+      <el-col :span="4">
+        <div class="progress-box" style="margin-right: 10px;">
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节14绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[13]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+        </div>
+      </el-col>
+      <el-col :span="4">
+        <div class="progress-box" style="margin-right: 10px;">
+          <el-button type="text" size = "mini" style="margin-right:3px;">设置关节15绝对位置:</el-button >
+          <InputNumber :inputs.sync="JointPosData.Data[14]" style="min-width: 50px; max-width: 100px;" size="mini"> </InputNumber> 
+        </div>
+      </el-col>
+      <el-col :span="2"><el-button type="text" style="margin-right:3px;"></el-button ></el-col>
+    </el-row>
+
+    <el-row  style="margin-top:0px; " type="flex" justify="center">
       <el-col :span="9" style="min-height:1px;">
         <div></div>
       </el-col>
       <el-col :span="6">
         <el-button style="width:80% " 
           type="primary" plain size="mini" 
-          @click="sendTestingMsg">  
+          @click="sendJointPosMsg">  
           发送手动参数
         </el-button> 
       </el-col>
@@ -126,52 +126,12 @@
 <script>
 import InputNumber from '@/components/InputNumber'
 import { ipcRenderer } from 'electron'
-import { APP_CMD_SET_MANUAL_DATA } from '../../../../js/constants/IndoorConstants'
-import { EventBus } from "../../../../Utils/EventBus"
+import { APP_TOUCH_BUTTON_SEND_MULT_CMD } from '../../../../js/constants/IndoorConstants'
 export default {
    data () {
     return {
-      CheckedData: { 
-        Heater:false,
-        HydraulicValve:false,
-        WaterValve1:false,
-        WaterValve2:false,
-        WaterValve3:false,
-        OilHeatStrip1:false,
-        OilHeatStrip2:false,
-
-        EEVSet1:false,
-        EEVSet2:false,
-        FanSet1:false,
-        FanSet2:false,
-        CompSet1:false,
-        CompSet2:false,
-        PumpSet:false,
-      },
-      ManualData: {
-
-        EEVSetStep1: 0,
-        EEVSetStep2: 0,
-        FanSetSpeed1: 0,
-        FanSetspeed2: 0,
-        CompSetFreq1: 0,
-        CompSetFreq2: 0,
-        PumpSetFreq: 0,
-      },
-      SelectData: {
-        Heater:2,
-        HydraulicValve:2,
-        WaterValve1:2,
-        WaterValve2:2,
-        WaterValve3:2,
-        OilHeatStrip1:2,
-        OilHeatStrip2:2,
-      },
-
-      ManualDataType: {
-          ManualOnOffByte: 0,
-          RelayOnOffByte: 0,
-          Data: [0,0,0,0,0,0,0,0,0,0],
+      JointPosData: {
+          Data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
         }
     }
   },
@@ -180,66 +140,16 @@ export default {
   },
  
   methods: {
-    sendTestingMsg () {
-
-      //手动模式标志位
-      this.ManualDataType.ManualOnOffByte = 0;
-      if (this.CheckedData.EEVSet1 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0010;
-      }
-      if (this.CheckedData.EEVSet2 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0020;
-      }
-      if (this.CheckedData.FanSet1 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0004;
-      }
-      if (this.CheckedData.FanSet2 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0008;
-      }
-      if (this.CheckedData.CompSet1 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0001;
-      }
-      if (this.CheckedData.CompSet2 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0002;
-      }
-      if (this.CheckedData.PumpSet === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0040;
-      }
-      if (this.CheckedData.Heater === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0080;
-      }
-      if (this.CheckedData.OilHeatStrip1 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0100;
-      }
-      if (this.CheckedData.OilHeatStrip2 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0200;
-      }
-      if (this.CheckedData.HydraulicValve === true) {
-        //none
-      }
-      if (this.CheckedData.WaterValve1 === true) {
-        //none
-      }
-      
-
-      //继电器开关 251
-      this.ManualDataType.RelayOnOffByte = 0;
-      if (this.SelectData.Heater === 1) {
-        this.ManualDataType.RelayOnOffByte |= 0x01;
-      }
-      if (this.SelectData.OilHeatStrip1 === 1) {
-        this.ManualDataType.RelayOnOffByte |= 0x02;
-      }
-      if (this.SelectData.OilHeatStrip2 === 1) {
-        this.ManualDataType.RelayOnOffByte |= 0x04;
-      }
-
-
-      ipcRenderer.send(APP_CMD_SET_MANUAL_DATA, {
-        Data: this.ManualDataType.Data,
-        Manual: this.ManualDataType.ManualOnOffByte,
-        Relay: this.ManualDataType.RelayOnOffByte
-      })
+    sendJointPosMsg () {
+        const uint32Data = this.MotorIncPos.Data.map(v => {
+            const num = Number(v);
+            return num >>> 0;
+        });
+        //console.log('sendJointPosMsg', uint32Data);
+        ipcRenderer.send(APP_TOUCH_BUTTON_SEND_MULT_CMD, {
+            CmdType: 'SetJointAbsPosCmd',
+            Data: uint32Data,
+        });
       
     }
   },

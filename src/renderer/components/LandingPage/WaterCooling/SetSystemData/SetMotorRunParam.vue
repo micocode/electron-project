@@ -1,11 +1,7 @@
 <template>
     <div class="out-table">
       <div class="block">
-        <el-carousel
-          height="150px"
-          indicator-position="outside"
-          :autoplay="false"
-        >
+        <el-carousel height="150px" indicator-position="outside" :autoplay="false">
           <el-carousel-item>
             <el-checkbox-group v-model="checkList1" style="margin-top:2px">
               <el-row >
@@ -167,7 +163,7 @@
                   <div></div>
                 </el-col>
                 <el-col :span="20">
-                  <el-button size="mini" @click="saveCheckboxGroup1">发送电机重置零点修改</el-button>
+                  <el-button size="mini" @click="saveCheckboxGroup2">发送电机重置零点修改</el-button>
                 </el-col>
                 <el-col :span="2" style="min-height:1px;">
                   <div></div>
@@ -252,7 +248,7 @@
                   <div></div>
                 </el-col>
                 <el-col :span="20">
-                  <el-button size="mini" @click="saveCheckboxGroup1">发送电机转子零位校准修改</el-button>
+                  <el-button size="mini" @click="saveCheckboxGroup3">发送电机转子零位校准修改</el-button>
                 </el-col>
                 <el-col :span="2" style="min-height:1px;">
                   <div></div>
@@ -268,7 +264,7 @@
   <script>
     import { ipcRenderer } from 'electron'
     import {
-      APP_SEND_SIGNAL_DATA_06_CMD
+      APP_TOUCH_BUTTON_SEND_MULT_CMD
     } from '../../../../js/constants/IndoorConstants'
   export default {
     name: "OutTable",
@@ -277,10 +273,8 @@
         checkList1: [],
         checkList2: [],
         checkList3: [],
-        EEPROMType: {
-          Length: 1,
-          Address: 0,
-          Data: 0,
+        Payload: {
+          Data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         }
       };
     },
@@ -289,396 +283,191 @@
     },
     methods: {
       saveCheckboxGroup1(){
-        console.log("checkList1>>", this.checkList1);
-        this.EEPROMType.Data = 0;
-        for (var i = 0; i < this.checkList1.length; i++) {
-          switch(this.checkList1[i]) {
-            case 1: 
-              this.EEPROMType.Data |= 0x0001; 
-              break;
-            case 2:
-              this.EEPROMType.Data |= 0x0002; 
-              break;
-            case 3:
-              this.EEPROMType.Data |= 0x0004; 
-              break;
-            case 4:
-              this.EEPROMType.Data |= 0x0008;  
-              break;
-            case 5:
-              this.EEPROMType.Data |= 0x0010; 
-              break;
-            case 6:
-              this.EEPROMType.Data |= 0x0020; 
-              break;
-            case 7:
-              this.EEPROMType.Data |= 0x0040; 
-              break;
-            case 8:
-              this.EEPROMType.Data |= 0x0080; 
-              break;
-            case 9:
-              this.EEPROMType.Data |= 0x0100; 
-              break;
-            case 10:
-              this.EEPROMType.Data |= 0x0200;  
-              break;
-            case 11:
-              this.EEPROMType.Data |= 0x0400; 
-              break;
-            case 12:
-              this.EEPROMType.Data |= 0x0800; 
-              break;
-            case 13:
-              this.EEPROMType.Data |= 0x1000; 
-              break;
-            case 14:
-              this.EEPROMType.Data |= 0x2000; 
-              break;
-            case 15:
-              this.EEPROMType.Data |= 0x4000; 
-              break;
-            default:
-                break;
-          }
+        //console.log("checkList1>>", this.checkList1);
+        for (var Index = 0; Index < 15; Index++) {
+            this.Payload.Data[Index] = 1;
         }
-
-        this.EEPROMType.Address = 234;
-        ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
-          Length: this.EEPROMType.Length,
-          Address: this.EEPROMType.Address,
-          Data: this.EEPROMType.Data,
+        for (var i = 0; i < this.checkList1.length; i++) {
+            switch(this.checkList1[i]) {
+                case 1: 
+                this.Payload.Data[0] = 0;
+                break;
+                case 2:
+                this.Payload.Data[1] = 0;
+                break;
+                case 3:
+                this.Payload.Data[2] = 0;
+                break;
+                case 4:
+                this.Payload.Data[3] = 0;
+                break;
+                case 5:
+                this.Payload.Data[4] = 0; 
+                break;
+                case 6:
+                this.Payload.Data[5] = 0; 
+                break;
+                case 7:
+                this.Payload.Data[6] = 0; 
+                break;
+                case 8:
+                this.Payload.Data[7] = 0;
+                break;
+                case 9:
+                this.Payload.Data[8] = 0;  
+                break;
+                case 10:
+                this.Payload.Data[9] = 0;  
+                break;
+                case 11:
+                this.Payload.Data[10] = 0; 
+                break;
+                case 12:
+                this.Payload.Data[11] = 0;
+                break;
+                case 13:
+                this.Payload.Data[12] = 0; 
+                break;
+                case 14:
+                this.Payload.Data[13] = 0; 
+                break;
+                case 15:
+                this.Payload.Data[14] = 0;
+                break;
+                default:
+                    break;
+            }
+        }
+        //console.log("this.Payload.Data>>", this.Payload.Data);
+        ipcRenderer.send(APP_TOUCH_BUTTON_SEND_MULT_CMD, {
+            CmdType: 'SetMotorEnableCmd',
+            Data: this.Payload.Data,
         })
-           
       },
       saveCheckboxGroup2(){
-        console.log("checkList2>>", this.checkList2);
-        this.EEPROMType.Data = 0;
-        for (var i = 0; i < this.checkList2.length; i++) {
-          switch(this.checkList2[i]) {
-            case 1: 
-              this.EEPROMType.Data |= 0x0004; 
-              break;
-            case 2:
-              this.EEPROMType.Data |= 0x0008; 
-              break;
-            case 3:
-              this.EEPROMType.Data |= 0x0010; 
-              break;
-            case 4:
-              this.EEPROMType.Data |= 0x0020; 
-              break;
-            case 5:
-              this.EEPROMType.Data |= 0x0040; 
-              break;
-            case 6:
-              this.EEPROMType.Data |= 0x0080; 
-              break;
-            case 7:
-              this.EEPROMType.Data |= 0x0100; 
-              break;
-            case 8:
-              this.EEPROMType.Data |= 0x0200; 
-              break;
-            case 9:
-              this.EEPROMType.Data |= 0x0400; 
-              break;
-            case 10:
-              this.EEPROMType.Data |= 0x0800; 
-              break;
-            case 11:
-              this.EEPROMType.Data |= 0x1000; 
-              break;
-            case 12:
-              this.EEPROMType.Data |= 0x2000; 
-              break;
-            case 13:
-              this.EEPROMType.Data |= 0x4000; 
-              break;
-            case 14:
-              this.EEPROMType.Data |= 0x8000; 
-              break;
-            default:
-                break;
-          }
+        //console.log("checkList2>>", this.checkList2);
+        for (var Index = 0; Index < 15; Index++) {
+            this.Payload.Data[Index] = 0;
         }
-
-        this.EEPROMType.Address = 235;
-        ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
-          Length: this.EEPROMType.Length,
-          Address: this.EEPROMType.Address,
-          Data: this.EEPROMType.Data,
+        for (var i = 0; i < this.checkList2.length; i++) {
+            switch(this.checkList2[i]) {
+                case 1: 
+                this.Payload.Data[0] = 1;
+                break;
+                case 2:
+                this.Payload.Data[1] = 1;
+                break;
+                case 3:
+                this.Payload.Data[2] = 1;
+                break;
+                case 4:
+                this.Payload.Data[3] = 1;
+                break;
+                case 5:
+                this.Payload.Data[4] = 1; 
+                break;
+                case 6:
+                this.Payload.Data[5] = 1; 
+                break;
+                case 7:
+                this.Payload.Data[6] = 1; 
+                break;
+                case 8:
+                this.Payload.Data[7] = 1;
+                break;
+                case 9:
+                this.Payload.Data[8] = 1;  
+                break;
+                case 10:
+                this.Payload.Data[9] = 1;  
+                break;
+                case 11:
+                this.Payload.Data[10] = 1; 
+                break;
+                case 12:
+                this.Payload.Data[11] = 1;
+                break;
+                case 13:
+                this.Payload.Data[12] = 1; 
+                break;
+                case 14:
+                this.Payload.Data[13] = 1; 
+                break;
+                case 15:
+                this.Payload.Data[14] = 1;
+                break;
+                default:
+                    break;
+            }
+        }
+        //console.log("this.Payload.Data>>", this.Payload.Data);
+        ipcRenderer.send(APP_TOUCH_BUTTON_SEND_MULT_CMD, {
+            CmdType: 'ResetZeroPointCmd',
+            Data: this.Payload.Data,
         })
       },
       saveCheckboxGroup3(){
-        console.log("checkList3>>", this.checkList3);
-        this.EEPROMType.Data = 0;
-        for (var i = 0; i < this.checkList3.length; i++) {
-          switch(this.checkList3[i]) {
-            case 1: 
-              this.EEPROMType.Data |= 0x0001; 
-              break;
-            case 2:
-              this.EEPROMType.Data |= 0x0002; 
-              break;
-            case 3:
-              this.EEPROMType.Data |= 0x0004; 
-              break;
-            case 4:
-              this.EEPROMType.Data |= 0x0008;  
-              break;
-            case 5:
-              this.EEPROMType.Data |= 0x0010;  
-              break;
-            case 6:
-              this.EEPROMType.Data |= 0x0020; 
-              break;
-            case 7:
-              this.EEPROMType.Data |= 0x0040; 
-              break;
-            case 8:
-              this.EEPROMType.Data |= 0x0080; 
-              break;
-            case 9:
-              this.EEPROMType.Data |= 0x0100;  
-              break;
-            case 10:
-              this.EEPROMType.Data |= 0x0200; 
-              break;
-            case 11:
-              this.EEPROMType.Data |= 0x0400; 
-              break;
-            case 12:
-              this.EEPROMType.Data |= 0x0800; 
-              break;
-            case 13:
-              this.EEPROMType.Data |= 0x1000; 
-              break;
-            case 14:
-              this.EEPROMType.Data |= 0x2000; 
-              break;
-            case 15:
-              this.EEPROMType.Data |= 0x4000; 
-              break;
-            default:
-                break;
-          }
+        //console.log("checkList3>>", this.checkList3);
+        for (var Index = 0; Index < 15; Index++) {
+            this.Payload.Data[Index] = 0;
         }
-
-        this.EEPROMType.Address = 236;
-        ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
-          Length: this.EEPROMType.Length,
-          Address: this.EEPROMType.Address,
-          Data: this.EEPROMType.Data,
+        for (var i = 0; i < this.checkList3.length; i++) {
+            switch(this.checkList3[i]) {
+                case 1: 
+                this.Payload.Data[0] = 1;
+                break;
+                case 2:
+                this.Payload.Data[1] = 1;
+                break;
+                case 3:
+                this.Payload.Data[2] = 1;
+                break;
+                case 4:
+                this.Payload.Data[3] = 1;
+                break;
+                case 5:
+                this.Payload.Data[4] = 1; 
+                break;
+                case 6:
+                this.Payload.Data[5] = 1; 
+                break;
+                case 7:
+                this.Payload.Data[6] = 1; 
+                break;
+                case 8:
+                this.Payload.Data[7] = 1;
+                break;
+                case 9:
+                this.Payload.Data[8] = 1;  
+                break;
+                case 10:
+                this.Payload.Data[9] = 1;  
+                break;
+                case 11:
+                this.Payload.Data[10] = 1; 
+                break;
+                case 12:
+                this.Payload.Data[11] = 1;
+                break;
+                case 13:
+                this.Payload.Data[12] = 1; 
+                break;
+                case 14:
+                this.Payload.Data[13] = 1; 
+                break;
+                case 15:
+                this.Payload.Data[14] = 1;
+                break;
+                default:
+                    break;
+            }
+        }
+        //console.log("this.Payload.Data>>", this.Payload.Data);
+        ipcRenderer.send(APP_TOUCH_BUTTON_SEND_MULT_CMD, {
+            CmdType: 'ZeroPointCheckCmd',
+            Data: this.Payload.Data,
         })
       }, 
-      saveCheckboxGroup4(){
-        console.log("checkList4>>", this.checkList4);
-        this.EEPROMType.Data = 0;
-        for (var i = 0; i < this.checkList4.length; i++) {
-          switch(this.checkList4[i]) {
-            case 1: 
-              this.EEPROMType.Data |= 0x0004; 
-              break;
-            case 2:
-              this.EEPROMType.Data |= 0x0008; 
-              break;
-            case 3:
-              this.EEPROMType.Data |= 0x0010; 
-              break;
-            case 4:
-              this.EEPROMType.Data |= 0x0020; 
-              break;
-            case 5:
-              this.EEPROMType.Data |= 0x0040; 
-              break;
-            case 6:
-              this.EEPROMType.Data |= 0x0080; 
-              break;
-            case 7:
-              this.EEPROMType.Data |= 0x0100; 
-              break;
-            case 8:
-              this.EEPROMType.Data |= 0x0200; 
-              break;
-            case 9:
-              this.EEPROMType.Data |= 0x0400; 
-              break;
-            case 10:
-              this.EEPROMType.Data |= 0x0800; 
-              break;
-            case 11:
-              this.EEPROMType.Data |= 0x1000; 
-              break;
-            case 12:
-              this.EEPROMType.Data |= 0x2000; 
-              break;
-            case 13:
-              this.EEPROMType.Data |= 0x4000; 
-              break;
-            case 14:
-              this.EEPROMType.Data |= 0x8000; 
-              break;
-            default:
-                break;
-          }
-        }
-
-        this.EEPROMType.Address = 237;
-        ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
-          Length: this.EEPROMType.Length,
-          Address: this.EEPROMType.Address,
-          Data: this.EEPROMType.Data,
-        })
-      },
-      saveCheckboxGroup5(){
-        console.log("checkList5>>", this.checkList5);
-
-        this.EEPROMType.Data = 0;
-        for (var i = 0; i < this.checkList5.length; i++) {
-          switch(this.checkList5[i]) {
-            case 1: 
-              this.EEPROMType.Data |= 0x0001; // 水温高温告警 bit0
-              break;
-            case 2:
-              this.EEPROMType.Data |= 0x0002; // 进水压力传感器故障 bit7
-              break;
-            case 3:
-              this.EEPROMType.Data |= 0x0004; // 环境温度传感器故障  bit2
-              break;
-            case 4:
-              this.EEPROMType.Data |= 0x0008; // 水泵压差低告警 bit9
-              break;
-            case 5:
-              this.EEPROMType.Data |= 0x0010; // 出水温度传感器故障  bit4
-              break;
-            case 6:
-              this.EEPROMType.Data |= 0x0020; // 水流开关保护告警 bit11
-              break;
-            case 7:
-              this.EEPROMType.Data |= 0x0040; // 补水警告 bit10
-              break;
-            case 8:
-              this.EEPROMType.Data |= 0x0080; // 水温低温告警 bit1
-              break;
-            case 9:
-              this.EEPROMType.Data |= 0x0100; // 出水压力传感器故障 bit6
-              break;
-            case 10:
-              this.EEPROMType.Data |= 0x0200; //系统水温传感器故障  bit3
-              break;
-             case 11:
-              this.EEPROMType.Data |= 0x0400; //水泵压差高告警 bit8
-              break;
-            case 12:
-              this.EEPROMType.Data |= 0x0800; //进水温度传感器故障 bit5
-              break;
-            case 13:
-              this.EEPROMType.Data |= 0x1000; //水流开关保护锁定 bit12
-              break;
-            case 14:
-              this.EEPROMType.Data |= 0x2000; // 温差过大告警 bit13
-              break;
-            case 15:
-              this.EEPROMType.Data |= 0x4000; //水流开关保护锁定 bit12
-              break;
-            case 16:
-              this.EEPROMType.Data |= 0x8000; // 温差过大告警 bit13
-              break;
-            default:
-                break;
-          }
-        }
-
-        this.EEPROMType.Address = 238;
-        ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
-          Length: this.EEPROMType.Length,
-          Address: this.EEPROMType.Address,
-          Data: this.EEPROMType.Data,
-        })
-      },
-      saveCheckboxGroup6(){
-        console.log("checkList6>>", this.checkList6);
-        this.EEPROMType.Data = 0;
-        for (var i = 0; i < this.checkList6.length; i++) {
-          switch(this.checkList6[i]) {
-            case 1: 
-              this.EEPROMType.Data |= 0x0001; 
-              break;
-            case 2:
-              this.EEPROMType.Data |= 0x0002; 
-              break;
-            case 3:
-              this.EEPROMType.Data |= 0x0004; 
-              break;
-            case 4:
-              this.EEPROMType.Data |= 0x0008; 
-              break;  
-            case 5:
-              this.EEPROMType.Data |= 0x0010; 
-              break;
-        
-            default:
-                break;
-          }
-        }
-
-        this.EEPROMType.Address = 239;
-        ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
-          Length: this.EEPROMType.Length,
-          Address: this.EEPROMType.Address,
-          Data: this.EEPROMType.Data,
-        })
-       
-      },
-      saveCheckboxGroup7(){
-        console.log("checkList7>>", this.checkList7);
-        this.EEPROMType.Data = 0;
-        for (var i = 0; i < this.checkList7.length; i++) {
-          switch(this.checkList7[i]) {
-            case 1: 
-              this.EEPROMType.Data |= 0x0001; 
-              break;
-            case 2:
-              this.EEPROMType.Data |= 0x0002; 
-              break;
-            case 3:
-              this.EEPROMType.Data |= 0x0004; 
-              break;
-            case 4:
-              this.EEPROMType.Data |= 0x0008; 
-              break;
-            case 5:
-              this.EEPROMType.Data |= 0x0010; 
-              break;
-            case 6:
-              this.EEPROMType.Data |= 0x0020; 
-              break;
-            case 7:
-              this.EEPROMType.Data |= 0x0040; 
-              break;
-            case 8:
-              this.EEPROMType.Data |= 0x0080; 
-              break;
-            case 9:
-              this.EEPROMType.Data |= 0x0100; 
-              break;
-            case 10:
-              this.EEPROMType.Data |= 0x0200; 
-              break;
-            default:
-                break;
-          }
-        }
-
-        this.EEPROMType.Address = 240;
-        ipcRenderer.send(APP_SEND_SIGNAL_DATA_06_CMD, {
-          Length: this.EEPROMType.Length,
-          Address: this.EEPROMType.Address,
-          Data: this.EEPROMType.Data,
-        }) 
-      }
-
     },
     computed:{
       isShow(){

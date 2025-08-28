@@ -5,13 +5,13 @@
         <div></div>
       </el-col>
       <el-col :span="6">
-        <el-button style="width:80% " type="primary" plain size="small" @click="sendTestingMsg">灵巧手关节复位</el-button> 
+        <el-button style="width:80% " type="primary" plain size="small" @click="sendJointResetCmd">灵巧手关节复位</el-button> 
       </el-col>
       <el-col :span="6">
-        <el-button style="width:80% " type="primary" plain size="small" @click="sendTestingMsg">灵巧手模式切换</el-button> 
+        <el-button style="width:80% " type="primary" plain size="small" @click="sendModeChageCmd">灵巧手模式切换</el-button> 
       </el-col>
       <el-col :span="6">
-        <el-button style="width:80% " type="primary" plain size="small" @click="sendTestingMsg">灵巧手参数保存</el-button> 
+        <el-button style="width:80% " type="primary" plain size="small" @click="sendFlashSaveCmd">灵巧手参数保存</el-button> 
       </el-col>
       <el-col :span="3" style="min-height:1px;">
         <div></div>
@@ -22,13 +22,13 @@
         <div></div>
       </el-col>
       <el-col :span="6">
-        <el-button style="width:80% " type="primary" plain size="small" @click="sendTestingMsg">全部电机零位校准</el-button> 
+        <el-button style="width:80% " type="primary" plain size="small" @click="sendMotorZeroCheckCmd">全部电机零位校准</el-button> 
       </el-col>
       <el-col :span="6">
-        <el-button style="width:80% " type="primary" plain size="small" @click="sendTestingMsg">全部电机故障清除</el-button> 
+        <el-button style="width:80% " type="primary" plain size="small" @click="sendClearErrorCmd">全部电机故障清除</el-button> 
       </el-col>
       <el-col :span="6">
-        <el-button style="width:80% " type="primary" plain size="small" @click="sendTestingMsg">全部电机使能准备</el-button> 
+        <el-button style="width:80% " type="primary" plain size="small" @click="sendMotorReadyCmd">全部电机使能准备</el-button> 
       </el-col>
       <el-col :span="3" style="min-height:1px;">
         <div></div>
@@ -40,53 +40,10 @@
 <script>
 import InputNumber from '@/components/InputNumber'
 import { ipcRenderer } from 'electron'
-import { APP_CMD_SET_MANUAL_DATA } from '../../../../js/constants/IndoorConstants'
-import { EventBus } from "../../../../Utils/EventBus"
+import { APP_TOUCH_BUTTON_SEND_SINGLE_CMD } from '../../../../js/constants/IndoorConstants'
 export default {
    data () {
     return {
-      CheckedData: { 
-        Heater:false,
-        HydraulicValve:false,
-        WaterValve1:false,
-        WaterValve2:false,
-        WaterValve3:false,
-        OilHeatStrip1:false,
-        OilHeatStrip2:false,
-
-        EEVSet1:false,
-        EEVSet2:false,
-        FanSet1:false,
-        FanSet2:false,
-        CompSet1:false,
-        CompSet2:false,
-        PumpSet:false,
-      },
-      ManualData: {
-
-        EEVSetStep1: 0,
-        EEVSetStep2: 0,
-        FanSetSpeed1: 0,
-        FanSetspeed2: 0,
-        CompSetFreq1: 0,
-        CompSetFreq2: 0,
-        PumpSetFreq: 0,
-      },
-      SelectData: {
-        Heater:2,
-        HydraulicValve:2,
-        WaterValve1:2,
-        WaterValve2:2,
-        WaterValve3:2,
-        OilHeatStrip1:2,
-        OilHeatStrip2:2,
-      },
-
-      ManualDataType: {
-          ManualOnOffByte: 0,
-          RelayOnOffByte: 0,
-          Data: [0,0,0,0,0,0,0,0,0,0],
-        }
     }
   },
   components: {
@@ -94,68 +51,36 @@ export default {
   },
  
   methods: {
-    sendTestingMsg () {
-
-      //手动模式标志位
-      this.ManualDataType.ManualOnOffByte = 0;
-      if (this.CheckedData.EEVSet1 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0010;
-      }
-      if (this.CheckedData.EEVSet2 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0020;
-      }
-      if (this.CheckedData.FanSet1 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0004;
-      }
-      if (this.CheckedData.FanSet2 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0008;
-      }
-      if (this.CheckedData.CompSet1 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0001;
-      }
-      if (this.CheckedData.CompSet2 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0002;
-      }
-      if (this.CheckedData.PumpSet === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0040;
-      }
-      if (this.CheckedData.Heater === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0080;
-      }
-      if (this.CheckedData.OilHeatStrip1 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0100;
-      }
-      if (this.CheckedData.OilHeatStrip2 === true) {
-        this.ManualDataType.ManualOnOffByte |= 0x0200;
-      }
-      if (this.CheckedData.HydraulicValve === true) {
-        //none
-      }
-      if (this.CheckedData.WaterValve1 === true) {
-        //none
-      }
-      
-
-      //继电器开关 251
-      this.ManualDataType.RelayOnOffByte = 0;
-      if (this.SelectData.Heater === 1) {
-        this.ManualDataType.RelayOnOffByte |= 0x01;
-      }
-      if (this.SelectData.OilHeatStrip1 === 1) {
-        this.ManualDataType.RelayOnOffByte |= 0x02;
-      }
-      if (this.SelectData.OilHeatStrip2 === 1) {
-        this.ManualDataType.RelayOnOffByte |= 0x04;
-      }
-
-
-      ipcRenderer.send(APP_CMD_SET_MANUAL_DATA, {
-        Data: this.ManualDataType.Data,
-        Manual: this.ManualDataType.ManualOnOffByte,
-        Relay: this.ManualDataType.RelayOnOffByte
-      })
-      
-    }
+     sendJointResetCmd () {
+        ipcRenderer.send(APP_TOUCH_BUTTON_SEND_SINGLE_CMD, {
+            CmdType: 'JointResetCmd',
+        })
+    },
+    sendModeChageCmd () {
+        ipcRenderer.send(APP_TOUCH_BUTTON_SEND_SINGLE_CMD, {
+            CmdType: 'ModeSwitchCmd',
+        })
+    },
+    sendFlashSaveCmd () {
+        ipcRenderer.send(APP_TOUCH_BUTTON_SEND_SINGLE_CMD, {
+            CmdType: 'FlashSaveCmd',
+        })
+    },
+    sendMotorZeroCheckCmd () {
+        ipcRenderer.send(APP_TOUCH_BUTTON_SEND_SINGLE_CMD, {
+            CmdType: 'ZoreCheckCmd',
+        })
+    },
+    sendClearErrorCmd () {
+        ipcRenderer.send(APP_TOUCH_BUTTON_SEND_SINGLE_CMD, {
+            CmdType: 'ClearErrorCmd',
+        })
+    },
+    sendMotorReadyCmd () {
+        ipcRenderer.send(APP_TOUCH_BUTTON_SEND_SINGLE_CMD, {
+            CmdType: 'ReadyCmd',
+        })
+    },
   },
 }
 </script>
