@@ -7,7 +7,7 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节01设定</el-button>
-                  <el-input v-model="SystemData.SetJoint01" readonly size="mini"/>
+                  <el-input size="mini" v-model="SystemData.SetJoint01" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
@@ -19,19 +19,19 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节03设定</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetJoint03" readonly/>
+                  <el-input size="mini" v-model="SystemData.SetJoint03" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节01位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos01" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos01" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节02位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos02" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos02" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
@@ -46,37 +46,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节04设定</el-button>
-                  <el-input v-bind:value="SystemData.SetJoint04" readonly size="mini"/>
+                  <el-input size="mini" v-model="SystemData.SetJoint04" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节05设定</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetJoint05" readonly/>
+                  <el-input size="mini" v-model="SystemData.SetJoint05" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节06设定</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetJoint06" readonly/>
+                  <el-input size="mini" v-model="SystemData.SetJoint06" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节04位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos04" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos04" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节05位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos05" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos05" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节06位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos06 + KPaIcon" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos06" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -85,31 +85,31 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节07设定</el-button>
-                  <el-input v-bind:value="SystemData.SetJoint07" readonly size="mini"/>
+                  <el-input size="mini" v-model="SystemData.SetJoint07" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节08设定</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetJoint08" readonly/>
+                  <el-input size="mini" v-model="SystemData.SetJoint08" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节09设定</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetJoint09" readonly/>
+                  <el-input size="mini" v-model="SystemData.SetJoint09" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节07位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos07" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos07" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节08位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos08" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos08" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
@@ -124,37 +124,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节10设定</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetJoint10" readonly/>
+                  <el-input size="mini" v-model="SystemData.SetJoint10" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节11设定</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetJoint11" readonly/>
+                  <el-input size="mini" v-model="SystemData.SetJoint11" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节12设定</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetJoint12" readonly/>
+                  <el-input size="mini" v-model="SystemData.SetJoint12" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节10位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos10" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos10" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节11位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos11" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos11" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节12位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos12" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos12" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -163,37 +163,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节13设定</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetJoint13" readonly/>
+                  <el-input size="mini" v-model="SystemData.SetJoint13" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节14设定</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetJoint14" readonly/>
+                  <el-input size="mini" v-model="SystemData.SetJoint14" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节15设定</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.SetJoint15" readonly/>
+                  <el-input size="mini" v-model="SystemData.SetJoint15" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节13位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos13" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos13" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节14位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos14" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos14" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节15位置</el-button>
-                  <el-input size="mini" v-bind:value="SystemData.JointPos15" readonly/>
+                  <el-input size="mini" v-model="SystemData.JointPos15" readonly/>
                 </div>
               </el-col>
             </el-row>  
@@ -207,37 +207,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机01电流</el-button>
-                  <el-input v-bind:value="MotorData.Current01" readonly size="mini"/>
+                  <el-input size="mini" v-model="MotorData.Current01" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机02电流</el-button>
-                  <el-input v-bind:value="MotorData.Current02" readonly size="mini"/>
+                  <el-input size="mini" v-model="MotorData.Current02" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机03电流</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current03" readonly/>
+                  <el-input size="mini" v-model="MotorData.Current03" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机01故障</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error01" readonly/>
+                  <el-input size="mini" v-model="MotorData.Error01" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机02故障</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error02" readonly/>
+                  <el-input size="mini" v-model="MotorData.Error02" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机03故障</el-button>
-                 <el-input size="mini" v-bind:value="MotorData.Error03" readonly/>
+                 <el-input size="mini" v-model="MotorData.Error03" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -246,37 +246,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机04电流</el-button>
-                  <el-input v-bind:value="MotorData.Current04" readonly size="mini"/>
+                  <el-input size="mini" v-model="MotorData.Current04" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机05电流</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current05 " readonly/>
+                  <el-input size="mini" v-model="MotorData.Current05 " readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机06电流</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current06" readonly/>
+                  <el-input size="mini" v-model="MotorData.Current06" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机04故障</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error04" readonly/>
+                  <el-input size="mini" v-model="MotorData.Error04" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机05故障</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error05" readonly/>
+                  <el-input size="mini" v-model="MotorData.Error05" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机06故障</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error06" readonly/>
+                  <el-input size="mini" v-model="MotorData.Error06" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -285,31 +285,31 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机07电流</el-button>
-                  <el-input v-bind:value="MotorData.Current07" readonly size="mini"/>
+                  <el-input size="mini" v-model="MotorData.Current07" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机08电流</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current08" readonly/>
+                  <el-input size="mini" v-model="MotorData.Current08" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机09电流</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current09" readonly/>
+                  <el-input size="mini" v-model="MotorData.Current09" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机07故障</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error07" readonly/>
+                  <el-input size="mini" v-model="MotorData.Error07" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机08故障</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error08" readonly/>
+                  <el-input size="mini" v-model="MotorData.Error08" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
@@ -324,7 +324,7 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机10电流</el-button>
-                  <el-input v-model="MotorData.Current10" readonly size="mini"/>
+                  <el-input size="mini" v-model="MotorData.Current10" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
@@ -348,13 +348,13 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机11故障</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error11" readonly/>
+                  <el-input size="mini" v-model="MotorData.Error11" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机12故障</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error12" readonly/>
+                  <el-input size="mini" v-model="MotorData.Error12" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -363,37 +363,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机13电流</el-button>
-                  <el-input v-bind:value="MotorData.Current13" readonly size="mini"/>
+                  <el-input size="mini" v-model="MotorData.Current13" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机14电流</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current14" readonly/>
+                  <el-input size="mini" v-model="MotorData.Current14" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机15电流</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current15" readonly/>
+                  <el-input size="mini" v-model="MotorData.Current15" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机13故障</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error13" readonly/>
+                  <el-input size="mini" v-model="MotorData.Error13" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机14故障</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error14" readonly/>
+                  <el-input size="mini" v-model="MotorData.Error14" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机15故障</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error15" readonly/>
+                  <el-input size="mini" v-model="MotorData.Error15" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -404,37 +404,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机01位置</el-button>
-                  <el-input v-bind:value="MotorData.Current01" readonly size="mini"/>
+                  <el-input size="mini" v-model="MotorData.Location01" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机02位置</el-button>
-                  <el-input v-bind:value="MotorData.Current02" readonly size="mini"/>
+                  <el-input size="mini" v-model="MotorData.Location02" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机03位置</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current03" readonly/>
+                  <el-input size="mini" v-model="MotorData.Location03" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节01数据</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error01" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData01" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节02数据</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error02" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData02" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节03数据</el-button>
-                 <el-input size="mini" v-bind:value="MotorData.Error03" readonly/>
+                 <el-input size="mini" v-model="MotorData.JointData03" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -443,37 +443,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机04位置</el-button>
-                  <el-input v-bind:value="MotorData.Current04" readonly size="mini"/>
+                  <el-input size="mini" v-model="MotorData.Location04" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机05位置</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current05 " readonly/>
+                  <el-input size="mini" v-model="MotorData.Location05 " readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机06位置</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current06" readonly/>
+                  <el-input size="mini" v-model="MotorData.Location06" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节04数据</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error04" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData04" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节05数据</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error05" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData05" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节06数据</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error06" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData06" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -482,37 +482,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机07位置</el-button>
-                  <el-input v-bind:value="MotorData.Current07" readonly size="mini"/>
+                  <el-input size="mini" v-model="MotorData.Location07" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机08位置</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current08" readonly/>
+                  <el-input size="mini" v-model="MotorData.Location08" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机09位置</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current09" readonly/>
+                  <el-input size="mini" v-model="MotorData.Location09" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节07数据</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error07" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData07" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节08数据</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error08" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData08" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节09数据</el-button>
-                  <el-input size="mini" v-model="MotorData.Error09" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData09" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -521,37 +521,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机10位置</el-button>
-                  <el-input v-model="MotorData.Current10" readonly size="mini"/>
+                  <el-input size="mini" v-model="MotorData.Location10" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机11位置</el-button>
-                  <el-input size="mini" v-model="MotorData.Current11" readonly/>
+                  <el-input size="mini" v-model="MotorData.Location11" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机12位置</el-button>
-                  <el-input size="mini" v-model="MotorData.Current12" readonly/>
+                  <el-input size="mini" v-model="MotorData.Location12" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节10数据</el-button>
-                  <el-input size="mini" v-model="MotorData.Error10" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData10" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节11数据</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error11" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData11" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节12数据</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error12" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData12" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -560,37 +560,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机13位置</el-button>
-                  <el-input v-bind:value="MotorData.Current13" readonly size="mini"/>
+                  <el-input  size="mini" v-model="MotorData.Location13" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机14位置</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current14" readonly/>
+                  <el-input size="mini" v-model="MotorData.Location14" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机15位置</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Current15" readonly/>
+                  <el-input size="mini" v-model="MotorData.Location15" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节13数据</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error13" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData13" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节14数据</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error14" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData14" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节15数据</el-button>
-                  <el-input size="mini" v-bind:value="MotorData.Error15" readonly/>
+                  <el-input size="mini" v-model="MotorData.JointData15" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -604,58 +604,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">驱动母线电压</el-button>
-                  <el-input v-bind:value="FluorineData2.ExhaustGasTemp2 + TempIcon" readonly size="mini"/>
+                  <el-input size="mini" v-model="OtherData.VBus" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉1切向力</el-button>
-                  <el-input
-                    v-if="(FluorineData2.ExhaustGasProt2==='����' || FluorineData2.ExhaustGasProt2==='' || FluorineData2.ExhaustGasProt2===' / ')"
-                    size="mini"
-                    readonly
-                    v-model="FluorineData2.ExhaustGasProt2"
-                    
-                  />
-                  <el-input v-else size="mini" readonly v-model="FluorineData2.ExhaustGasProt2" WarningColor="warning"/>
+                  <el-input size="mini" v-model="OtherData.TangentialForce1" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉2切向力</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.EvaporatorTemp2 + TempIcon" readonly/>
+                  <el-input size="mini" v-model="OtherData.TangentialForce2" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉3切向力</el-button>
-                  <el-input
-                    v-if="(FluorineData2.EvaporatorProt2==='����' || FluorineData2.EvaporatorProt2==='' || FluorineData2.EvaporatorProt2===' / ')"
-                    size="mini"
-                    readonly
-                    v-model="FluorineData2.EvaporatorProt2"
-                    
-                  />
-                  <el-input v-else size="mini" readonly v-model="FluorineData2.EvaporatorProt2" WarningColor="warning"/>
+                   <el-input size="mini" v-model="OtherData.TangentialForce3" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉4切向力</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.CondenserTemp2 + TempIcon" readonly/>
+                  <el-input size="mini" v-model="OtherData.TangentialForce4" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉5切向力</el-button>
-                  <el-input
-                    v-if="(FluorineData2.CondenserProt2==='����'  || FluorineData2.CondenserProt2==='' || FluorineData2.CondenserProt2===' / ')"
-                    size="mini"
-                    readonly
-                    v-model="FluorineData2.CondenserProt2"
-                    
-                  />
-                  <el-input v-else size="mini" readonly v-model="FluorineData2.CondenserProt2" WarningColor="warning"/>
+                  <el-input size="mini" v-model="OtherData.TangentialForce5" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -663,52 +642,38 @@
             <el-row  style=" margin-left:15px; margin-right:15px;">
               <el-col :span="4">
                 <div class="progress-box" >
-                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">电机控制模式</el-button>
-                  <el-input v-bind:value="FluorineData2.SuctionTemp2 + TempIcon" readonly size="mini"/>
+                  <el-button type="text" size="small" style="width:170px; margin-right:3px;">工作运行模式</el-button>
+                  <el-input size="mini" v-model="OtherData.MotorCtrl" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉1法向力</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.LiquidPipeTemp2 + TempIcon" readonly/>
+                  <el-input size="mini" v-model="OtherData.NormalForce1" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉2法向力</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.LowPress2 + barIcon" readonly/>
+                  <el-input size="mini" v-model="OtherData.NormalForce2" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉3法向力</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.HighPress2 + barIcon" readonly/>
+                  <el-input size="mini" v-model="OtherData.NormalForce3" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉4法向力</el-button>
-                  <el-input
-                    v-if="(FluorineData2.PressProt2==='����' || FluorineData2.PressProt2==='' || FluorineData2.PressProt2===' / ')"
-                    size="mini"
-                    readonly
-                    v-model="FluorineData2.PressProt2"
-                    
-                  />
-                  <el-input v-else size="mini" readonly v-model="FluorineData2.PressProt2" WarningColor="warning"/>
+                  <el-input size="mini" v-model="OtherData.NormalForce4" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉5法向力</el-button>
-                  <el-input
-                    v-if="(FluorineData2.CompAcProt2==='����' || FluorineData2.CompAcProt2==='' || FluorineData2.CompAcProt2===' / ')"
-                    size="mini"
-                    readonly
-                    v-model="FluorineData2.CompAcProt2"
-                    
-                  />
-                  <el-input v-else size="mini" readonly v-model="FluorineData2.CompAcProt2" WarningColor="warning"/>
+                  <el-input size="mini" v-model="OtherData.NormalForce5" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -717,37 +682,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">关节复位标志</el-button>
-                  <el-input v-bind:value="FluorineData2.ReverseGasOverheat2 + TempIcon" readonly size="mini"/>
+                  <el-input size="mini" v-model="OtherData.ResetFlag" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉1接近值</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.ExhaustGasOverheat2 + TempIcon" readonly/>
+                  <el-input size="mini" v-model="OtherData.CloseValue1" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉2接近值</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.CondenserCasOverCool2 + TempIcon" readonly/>
+                  <el-input size="mini" v-model="OtherData.CloseValue2" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉3接近值</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.TargetExhaustGas2 + TempIcon" readonly/>
+                  <el-input size="mini" v-model="OtherData.CloseValue3" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉4接近值</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.TargetCondenserGas2 + TempIcon" readonly/>
+                  <el-input size="mini" v-model="OtherData.CloseValue4" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉5接近值</el-button>
-                  <el-input size="mini" v-model="FluorineData2.EEVStatus2" readonly/>
+                  <el-input size="mini" v-model="OtherData.CloseValue5" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -756,37 +721,37 @@
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">主控故障信息</el-button>
-                  <el-input v-model="FluorineData2.EEVInitStep2" readonly size="mini"/>
+                  <el-input size="mini" v-model="OtherData.MainError" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉1切力方向</el-button>
-                  <el-input size="mini" v-model="FluorineData2.EEVTargetStep2" readonly/>
+                  <el-input size="mini" v-model="OtherData.TangentialDir1" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉2切力方向</el-button>
-                  <el-input size="mini" v-model="FluorineData2.EEVNowStep2" readonly/>
+                  <el-input size="mini" v-model="OtherData.TangentialDir2" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉3切力方向</el-button>
-                  <el-input size="mini" v-model="FluorineData2.EEVAdjustStep2" readonly/>
+                  <el-input size="mini" v-model="OtherData.TangentialDir3" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉4切力方向</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.EEVAdjustPeriod2 + SecIcon" readonly/>
+                  <el-input size="mini" v-model="OtherData.TangentialDir4" readonly/>
                 </div>
               </el-col>
               <el-col :span="4">
                 <div class="progress-box" >
                   <el-button type="text" size="small" style="width:170px; margin-right:3px;">触觉5切力方向</el-button>
-                  <el-input size="mini" v-bind:value="FluorineData2.EEVAdjustTime2 + SecIcon" readonly/>
+                  <el-input size="mini" v-model="OtherData.TangentialDir5" readonly/>
                 </div>
               </el-col>
             </el-row>
@@ -806,9 +771,9 @@ import {
     // APP_EVENT_WRITE_XLSX,
     APP_EVENT_STOP_XLSX,
     // APP_EVENT_CLEAN_DATA,
-  } from '../../../../js/constants/ElectronConstants'
+  } from '../../../../js/constants/IndoorConstants'
   import {
-    APP_REPORT_UART_RECV_DATA,
+    APP_REPORT_UART_DATA,
   } from '../../../../js/constants/IndoorConstants'
 // import { constants } from 'fs';
 
@@ -882,51 +847,63 @@ export default {
         Error13: '',
         Error14: '',
         Error15: '',
+        Location01: '',
+        Location02: '',
+        Location03: '',
+        Location04: '',
+        Location05: '',
+        Location06: '',
+        Location07: '',
+        Location08: '',
+        Location09: '',
+        Location10: '',
+        Location11: '',
+        Location12: '',
+        Location13: '',
+        Location14: '',
+        Location15: '',
+        JointData01: '',
+        JointData02: '',
+        JointData03: '',
+        JointData04: '',
+        JointData05: '',
+        JointData06: '',
+        JointData07: '',
+        JointData08: '',
+        JointData09: '',
+        JointData10: '',
+        JointData11: '',
+        JointData12: '',
+        JointData13: '',
+        JointData14: '',
+        JointData15: '',
       },
 
-      FluorineData2: {
-        ExhaustGasTemp2: '',
-        ExhaustGasProt2: '',
-        EvaporatorTemp2: '',
-        EvaporatorProt2: '',
-        CondenserTemp2: '',
-        CondenserProt2: '',
-        SuctionTemp2: '',
-        LiquidPipeTemp2: '',
-        LowPress2: '',
-        HighPress2: '',
-        PressProt2: '',
-        CompAcProt2: '',
-        ReverseGasOverheat2: '',
-        ExhaustGasOverheat2: '',
-        CondenserCasOverCool2: '',
-        TargetExhaustGas2: '',
-        TargetCondenserGas2: '',
-        EEVStatus2: '',
-        EEVInitStep2: '',
-        EEVTargetStep2: '',
-        EEVNowStep2: '',
-        EEVAdjustStep2: '',
-        EEVAdjustPeriod2: '',
-        EEVAdjustTime2: '',
-        ReverseGasOverheatRate2: '',
-        ExhaustGasOverheatRate2: '',
-        WaterTempRate2: '',
-        CompAdjustFreq2: '',
-        CompAdjustPeriod2: '',
-        CompRunStatus2: '',
-        CompTargetFreq2: '',
-        CompRunFreq2: '',
-        CompIPMTemp2: '',
-        CompACCurrent2: '',
-        CompRunTime2: '',
-        CompSoptTime2: '',
-        FanTargetFreq2: '',
-        FanRunFreq2: '',
-        FanIPMTemp2: '',
-        FanACCurrent2: '',
-        FanRunTime2: '',
-        FanSoptTime2: '',
+      OtherData: {
+        VBus: '',
+        TangentialForce1: '',
+        TangentialForce2: '',
+        TangentialForce3: '',
+        TangentialForce4: '',
+        TangentialForce5: '',
+        MotorCtrl: '',
+        NormalForce1: '',
+        NormalForce2: '',
+        NormalForce3: '',
+        NormalForce4: '',
+        NormalForce5: '',
+        ResetFlag: '',
+        CloseValue1: '',
+        CloseValue2: '',
+        CloseValue3: '',
+        CloseValue4: '',
+        CloseValue5: '',
+        MainError: '',
+        TangentialDir1: '',
+        TangentialDir2: '',
+        TangentialDir3: '',
+        TangentialDir4: '',
+        TangentialDir5: '',
       },
       ErrorData: {
         FluorineSystemErr1: '', 
@@ -993,7 +970,7 @@ export default {
       if (this.$store.state.SystemData.MonitorMode === 'outdoor')
       {
         let jsonPath  //json·��
-        let csvHead = [this.SystemData, this.MotorData, this.ErrorData, this.FluorineData2] 
+        let csvHead = [this.SystemData, this.MotorData, this.OtherData] 
 
         // console.log('test1', __dirname)
         // console.log('test2', this.$store.state.SystemData.csvFilePath)
@@ -1024,640 +1001,403 @@ export default {
     })
 
     //Serial Data 
-    ipcRenderer.on(APP_REPORT_UART_RECV_DATA, (event, arg) => {
+    ipcRenderer.on(APP_REPORT_UART_DATA, (event, arg) => {
         let uint8ModbusData = [], uint16MudbusData = [], int16MudbusData = [];
+        let uint32MudbusData, int32MudbusData;
 
         //console.log("recv:", arg)
         uint8ModbusData = arg.slice(0, arg.length - 2);
         uint8ModbusData = uint8ModbusData.slice(3);
-
         for (let i = 0; i < (arg[2]/2); i++) {
-          uint16MudbusData[i] = ((uint8ModbusData[i*2] << 8) | (uint8ModbusData[i*2 + 1]))
+            uint16MudbusData[i] = ((uint8ModbusData[i*2] << 8) | (uint8ModbusData[i*2 + 1]))
           
-
-          if ((i === (106-20)) || (i === (107-20)) || (i === (108-20)) || (i === (109-20)) || 
-              (i === (88-20)) || (i === (89-20)) || (i === (95-20)) || (i === (96-20)) || (i ===(81-20)) || (i === (82-20))){
-                //����ʱ��ֵ����ת���з���������
-              int16MudbusData[i] = uint16MudbusData[i];
-          }
-          else{
-            if(uint16MudbusData[i] & 0x8000) {
-              int16MudbusData[i] = -(65536 - uint16MudbusData[i]);
-            } else {
-              int16MudbusData[i] = uint16MudbusData[i];
+            if ((i >= (0x1014-0x1003) && i <= (0x1031-0x1003)) || (i >= (0x1042-0x1003) && i <= (0x105F-0x1003))) {
+                int16MudbusData[i] = uint16MudbusData[i];
+            } else{
+                if(uint16MudbusData[i] & 0x8000) {
+                    int16MudbusData[i] = -(65536 - uint16MudbusData[i]);
+                } else {
+                    int16MudbusData[i] = uint16MudbusData[i];
+                }
             }
-          }
-          
-         
         }
+        // console.log("uint16MudbusData:", uint16MudbusData)
 
-        this.TempIcon = '��'
-        this.AIcon = 'A'
-        this.KPaIcon = 'kPa'
-        this.barIcon = 'bar'
-        this.HzIcon = 'Hz'
-        this.RateIcon = '��/min'
-        this.SecIcon = 's'
+        if (arg[1] === 0x04) {
+            this.OtherData.VBus = (uint16MudbusData[0] / 100).toString() + ' V';
+            if (uint16MudbusData[1] === 0) {
+                this.OtherData.MainError = '无故障';
+            } else if (uint16MudbusData[1] === 1) {
+                this.OtherData.MainError = '电压过低';
+            } else if (uint16MudbusData[1] === 2) {
+                this.OtherData.MainError = '电压过高';
+            } else if (uint16MudbusData[1] === 4) {
+                this.OtherData.MotorCtrl = '温度过高';
+            }
 
+            if (uint16MudbusData[2] === 0) {
+                this.MotorData.Error01 = '无故障';
+            } else if (uint16MudbusData[2] === 1) {
+                this.MotorData.Error01 = '电机缺相';
+            } else if (uint16MudbusData[2] === 2) {
+                this.MotorData.Error01 = '电机过流';
+            } else if (uint16MudbusData[2] === 4) {
+                this.MotorData.Error01 = '电机堵转';
+            } else if (uint16MudbusData[2] === 8) {
+                this.MotorData.Error01 = '编码器通讯异常';
+            }
 
-        //������Ϣ����
-        this.ErrorData.FluorineSystemErr1 = '0x' + uint16MudbusData[3].toString(16);
-        this.ErrorData.FluorineDriverErr1 = '0x' + uint16MudbusData[4].toString(16);
-        this.ErrorData.FluorineSystemErr2 = '0x' + uint16MudbusData[5].toString(16); 
-        this.ErrorData.FluorineDriverErr2 = '0x' + uint16MudbusData[6].toString(16);
-        this.ErrorData.WaterSystemErr = '0x' + uint16MudbusData[7].toString(16);
-        this.ErrorData.WaterDriverErr = '0x' + uint16MudbusData[8].toString(16);
-        this.ErrorData.SystemErr = '0x' + uint16MudbusData[9].toString(16);
+            if (uint16MudbusData[3] === 0) {
+                this.MotorData.Error02 = '无故障';
+            } else if (uint16MudbusData[3] === 1) {
+                this.MotorData.Error02 = '电机缺相';
+            } else if (uint16MudbusData[3] === 2) {
+                this.MotorData.Error02 = '电机过流';
+            } else if (uint16MudbusData[3] === 4) {
+                this.MotorData.Error02 = '电机堵转';
+            } else if (uint16MudbusData[3] === 8) {
+                this.MotorData.Error02 = '编码器通讯异常';
+            }
 
-        if ((uint16MudbusData[4] & 0x100) && (uint16MudbusData[4] & 0x2000))
-        {
-          this.ErrorData.FluorineDriverErr1 = '0x' + uint16MudbusData[4].toString(16) + '(ѹ1:' + uint16MudbusData[122].toString() +  ')' + '(��1:' + uint16MudbusData[124].toString() +  ')';
-        }
-        else if (uint16MudbusData[4] & 0x100)
-        {
-          this.ErrorData.FluorineDriverErr1 = '0x' + uint16MudbusData[4].toString(16) + '(ѹ1:' + uint16MudbusData[122].toString() +  ')'; 
-        }
-        else if (uint16MudbusData[4] & 0x2000)
-        {
-          this.ErrorData.FluorineDriverErr1 = '0x' + uint16MudbusData[4].toString(16) + '(��1:' + uint16MudbusData[124].toString() +  ')';
-        }
+            if (uint16MudbusData[4] === 0) {
+                this.MotorData.Error03 = '无故障';
+            } else if (uint16MudbusData[4] === 1) {
+                this.MotorData.Error03 = '电机缺相';
+            } else if (uint16MudbusData[4] === 2) {
+                this.MotorData.Error03 = '电机过流';
+            } else if (uint16MudbusData[4] === 4) {
+                this.MotorData.Error03 = '电机堵转';
+            } else if (uint16MudbusData[4] === 8) {
+                this.MotorData.Error03 = '编码器通讯异常';
+            }
 
-        if ((uint16MudbusData[6] & 0x100) && (uint16MudbusData[6] & 0x2000))
-        {
-          this.ErrorData.FluorineDriverErr2 = '0x' + uint16MudbusData[6].toString(16) + '(ѹ2:' + uint16MudbusData[123].toString() +  ')' + '(��2:' + uint16MudbusData[125].toString() +  ')';
-        }
-        else if (uint16MudbusData[6] & 0x100)
-        {
-          this.ErrorData.FluorineDriverErr2 = '0x' + uint16MudbusData[6].toString(16) + '(ѹ2:' + uint16MudbusData[123].toString() +  ')'; 
-        }
-        else if (uint16MudbusData[6] & 0x2000)
-        {
-          this.ErrorData.FluorineDriverErr2 = '0x' + uint16MudbusData[6].toString(16) + '(��2:' + uint16MudbusData[125].toString() +  ')';
-        }
+            if (uint16MudbusData[5] === 0) {
+                this.MotorData.Error04 = '无故障';
+            } else if (uint16MudbusData[5] === 1) {
+                this.MotorData.Error04 = '电机缺相';
+            } else if (uint16MudbusData[5] === 2) {
+                this.MotorData.Error04 = '电机过流';
+            } else if (uint16MudbusData[5] === 4) {
+                this.MotorData.Error04 = '电机堵转';
+            } else if (uint16MudbusData[5] === 8) {
+                this.MotorData.Error04 = '编码器通讯异常';
+            }
 
-        if (uint16MudbusData[8] & 0x4)
-        {
-          this.ErrorData.WaterDriverErr = '0x' + uint16MudbusData[8].toString(16) + '(��:' + uint16MudbusData[126].toString() +  ')';
-        }
+            if (uint16MudbusData[6] === 0) {
+                this.MotorData.Error05 = '无故障';
+            } else if (uint16MudbusData[6] === 1) {
+                this.MotorData.Error05 = '电机缺相';
+            } else if (uint16MudbusData[6] === 2) {
+                this.MotorData.Error05 = '电机过流';
+            } else if (uint16MudbusData[6] === 4) {
+                this.MotorData.Error05 = '电机堵转';
+            } else if (uint16MudbusData[6] === 8) {
+                this.MotorData.Error05 = '编码器通讯异常';
+            }
 
-        switch (int16MudbusData[30-20]) {
-          case 0:
-            this.SystemData.SetMode = '�ػ�'
-            break;
-          case 1:
-            this.SystemData.SetMode = '�Զ�'
-            break;
-          case 2:
-            this.SystemData.SetMode = 'ˮ��ѭ��'
-            break;
-          default:
-            break;
-        }
+            if (uint16MudbusData[7] === 0) {
+                this.MotorData.Error06 = '无故障';
+            } else if (uint16MudbusData[7] === 1) {
+                this.MotorData.Error06 = '电机缺相';
+            } else if (uint16MudbusData[7] === 2) {
+                this.MotorData.Error06 = '电机过流';
+            } else if (uint16MudbusData[7] === 4) {
+                this.MotorData.Error06 = '电机堵转';
+            } else if (uint16MudbusData[7] === 8) {
+                this.MotorData.Error06 = '编码器通讯异常';
+            }
 
-        switch (int16MudbusData[31-20]) {
-          case 0:
-            this.SystemData.RunMode = '�ػ�'
-            break;
-          case 1:
-            this.SystemData.RunMode = '����'
-            break;
-          case 2:
-            this.SystemData.RunMode = '����'
-            break;
-          case 3:
-            this.SystemData.RunMode = 'ˮ��ѭ��'
-            break;
-          default:
-            break;
-        }
+            if (uint16MudbusData[8] === 0) {
+                this.MotorData.Error07 = '无故障';
+            } else if (uint16MudbusData[8] === 1) {
+                this.MotorData.Error07 = '电机缺相';
+            } else if (uint16MudbusData[8] === 2) {
+                this.MotorData.Error07 = '电机过流';
+            } else if (uint16MudbusData[8] === 4) {
+                this.MotorData.Error07 = '电机堵转';
+            } else if (uint16MudbusData[8] === 8) {
+                this.MotorData.Error07 = '编码器通讯异常';
+            }
 
-        this.SystemData.SetCool = (int16MudbusData[33-20] & 0xFF)  
-        this.SystemData.SetHeat = (int16MudbusData[33-20] >> 8) 
-        this.SystemData.CtrlTemp = int16MudbusData[34-20] / 10  
-        switch (int16MudbusData[118-20]) {
-          case 0:
-            this.SystemData.CtrlMode = '��ˮ'
-            break;
-          case 1:
-            this.SystemData.CtrlMode = '��ˮ'
-            break;
-          case 2:
-            this.SystemData.CtrlMode = '��о'
-            break;
-          default:
-            break;
-        }
-        this.SystemData.OutWaterTemp = int16MudbusData[36-20] / 10 
-        this.SystemData.InWaterTemp = int16MudbusData[37-20] / 10 
-        this.SystemData.OutWaterPress = int16MudbusData[67-20]
-        this.SystemData.InWaterPress = int16MudbusData[68-20]
-        this.SystemData.WaterTempDiff = Math.abs(((int16MudbusData[36-20] - int16MudbusData[37-20]) / 10)) 
-        this.SystemData.WaterPressDiff = (int16MudbusData[67-20] - int16MudbusData[68-20]) 
-        this.SystemData.AroundTemp = int16MudbusData[38-20] / 10 
-        if (int16MudbusData[32-20] & 0x800)
-        {
-          this.SystemData.SysWaterTemp = int16MudbusData[35-20] / 10 
-        }
-        else 
-        {
-          this.SystemData.SysWaterTemp = ' / '
-        }
-        
-        this.SystemData.PumpFreq =int16MudbusData[78-20] 
-        this.SystemData.PumpCurrent = int16MudbusData[80-20] / 10 
-        this.SystemData.PumpIPMTemp = int16MudbusData[83-20] / 10 
-        this.SystemData.PumpRunTime = changetime(int16MudbusData[81-20]) 
-        this.SystemData.Heater = (int16MudbusData[22-20]& (1<<0)) ? '����' : '�ر�'
-        this.SystemData.WarningOut = (int16MudbusData[22-20] & (1<<11)) ? '����' : '�ر�'
-        this.SystemData.CoolingFan = (int16MudbusData[22-20] & (1<<12)) ? '����' : '�ر�'
-       
-        if (int16MudbusData[32-20] & 0x3F3)
-        {
-          this.SystemData.ManualMode = '����' 
-        }
-        else 
-        {
-          this.SystemData.ManualMode = '�ر�' 
-        }
+            if (uint16MudbusData[9] === 0) {
+                this.MotorData.Error08 = '无故障';
+            } else if (uint16MudbusData[9] === 1) {
+                this.MotorData.Error08 = '电机缺相';
+            } else if (uint16MudbusData[9] === 2) {
+                this.MotorData.Error08 = '电机过流';
+            } else if (uint16MudbusData[9] === 4) {
+                this.MotorData.Error08 = '电机堵转';
+            } else if (uint16MudbusData[9] === 8) {
+                this.MotorData.Error08 = '编码器通讯异常';
+            }
 
-        
-        this.SystemData.OilReturn1 = (int16MudbusData[32-20] & (1<<2)) ? '����' : '�ر�'
-        this.SystemData.OilReturn2 = (int16MudbusData[32-20] & (1<<3)) ? '����' : '�ر�'
-        this.SystemData.HydraulicValve = (int16MudbusData[22-20] & (1<<4)) ? '����' : '�ر�'
-        this.SystemData.WaterValve1 = (int16MudbusData[22-20] & (1<<1)) ? '����' : '�ر�'
-        this.SystemData.WaterValve2 = (int16MudbusData[22-20] & (1<<2)) ? '����' : '�ر�'
-        this.SystemData.WaterValve3 = (int16MudbusData[22-20] & (1<<3)) ? '����' : '�ر�'
-        this.SystemData.OilHeatStrip1 = (int16MudbusData[22-20] & (1<<5)) ? '����' : '�ر�'
-        this.SystemData.OilHeatStrip2 = (int16MudbusData[22-20] & (1<<6)) ? '����' : '�ر�'
+            if (uint16MudbusData[10] === 0) {
+                this.MotorData.Error09 = '无故障';
+            } else if (uint16MudbusData[10] === 1) {
+                this.MotorData.Error09 = '电机缺相';
+            } else if (uint16MudbusData[10] === 2) {
+                this.MotorData.Error09 = '电机过流';
+            } else if (uint16MudbusData[10] === 4) {
+                this.MotorData.Error09 = '电机堵转';
+            } else if (uint16MudbusData[10] === 8) {
+                this.MotorData.Error09 = '编码器通讯异常';
+            }
 
-        this.MotorData.ExhaustGasTemp1 = int16MudbusData[39-20] / 10 
-        this.MotorData.ExhaustGasProt1 = '����'
-        switch (int16MudbusData[20-20] & 0x07)
-        {
-          case 0:
-            this.MotorData.ExhaustGasProt1 = '����'
-            break;
-          case 1:
-            this.MotorData.ExhaustGasProt1 = '����'
-            break;
-          case 2:
-            this.MotorData.ExhaustGasProt1 = '����'
-            break;
-          case 3:
-            this.MotorData.ExhaustGasProt1 = '����'
-            break;
-          case 4:
-            this.MotorData.ExhaustGasProt1 = '����'
-            break;
-          case 5:
-            this.MotorData.ExhaustGasProt1 = '�콵'
-            break;
-          default:
-            break;
-        }
-        this.MotorData.EvaporatorTemp1 = int16MudbusData[43-20] / 10 
-        switch ((int16MudbusData[20-20] >> 3)& 0x07)
-        {
-          case 0:
-            this.MotorData.EvaporatorProt1 = '����'
-            break;
-          case 1:
-            this.MotorData.EvaporatorProt1 = '����'
-            break;
-          case 2:
-            this.MotorData.EvaporatorProt1 = '����'
-            break;
-          case 3:
-            this.MotorData.EvaporatorProt1 = '����'
-            break;
-          case 4:
-            this.MotorData.EvaporatorProt1 = '����'
-            break;
-          case 5:
-            this.MotorData.EvaporatorProt1 = '�콵'
-            break;
-          default:
-            break;
-        }
+            if (uint16MudbusData[11] === 0) {
+                this.MotorData.Error10 = '无故障';
+            } else if (uint16MudbusData[11] === 1) {
+                this.MotorData.Error10 = '电机缺相';
+            } else if (uint16MudbusData[11] === 2) {
+                this.MotorData.Error10 = '电机过流';
+            } else if (uint16MudbusData[11] === 4) {
+                this.MotorData.Error10 = '电机堵转';
+            } else if (uint16MudbusData[11] === 8) {
+                this.MotorData.Error10 = '编码器通讯异常';
+            }
 
-        this.MotorData.CondenserTemp1 = int16MudbusData[42-20] / 10
-        this.MotorData.CondenserProt1 = '����'
-        switch ((int16MudbusData[20-20] >> 6)& 0x07)
-        {
-          case 0:
-            this.MotorData.CondenserProt1 = '����'
-            break;
-          case 1:
-            this.MotorData.CondenserProt1 = '����'
-            break;
-          case 2:
-            this.MotorData.CondenserProt1 = '����'
-            break;
-          case 3:
-            this.MotorData.CondenserProt1 = '����'
-            break;
-          case 4:
-            this.MotorData.CondenserProt1 = '����'
-            break;
-          case 5:
-            this.MotorData.CondenserProt1 = '�콵'
-            break;
-          default:
-            break;
-        }
+            if (uint16MudbusData[12] === 0) {
+                this.MotorData.Error11 = '无故障';
+            } else if (uint16MudbusData[12] === 1) {
+                this.MotorData.Error11 = '电机缺相';
+            } else if (uint16MudbusData[12] === 2) {
+                this.MotorData.Error11 = '电机过流';
+            } else if (uint16MudbusData[12] === 4) {
+                this.MotorData.Error11 = '电机堵转';
+            } else if (uint16MudbusData[12] === 8) {
+                this.MotorData.Error11 = '编码器通讯异常';
+            }
 
-        this.MotorData.SuctionTemp1 = int16MudbusData[40-20] / 10 
-        this.MotorData.LiquidPipeTemp1 = int16MudbusData[41-20] / 10 
-        this.MotorData.LowPress1 = int16MudbusData[70-20] / 10 
-        this.MotorData.HighPress1 = int16MudbusData[69-20] / 10 
-        switch ((int16MudbusData[20-20] >> 9)& 0x07)
-        {
-          case 0:
-            this.MotorData.PressProt1 = '����'
-            break;
-          case 1:
-            this.MotorData.PressProt1 = '����'
-            break;
-          case 2:
-            this.MotorData.PressProt1 = '����'
-            break;
-          case 3:
-            this.MotorData.PressProt1 = '����'
-            break;
-          case 4:
-            this.MotorData.PressProt1 = '����'
-            break;
-          case 5:
-            this.MotorData.PressProt1 = '�콵'
-            break;
-          default:
-            break;
-        }
+            if (uint16MudbusData[13] === 0) {
+                this.MotorData.Error12 = '无故障';
+            } else if (uint16MudbusData[13] === 1) {
+                this.MotorData.Error12 = '电机缺相';
+            } else if (uint16MudbusData[13] === 2) {
+                this.MotorData.Error12 = '电机过流';
+            } else if (uint16MudbusData[13] === 4) {
+                this.MotorData.Error12 = '电机堵转';
+            } else if (uint16MudbusData[13] === 8) {
+                this.MotorData.Error12 = '编码器通讯异常';
+            }
 
-        switch ((int16MudbusData[20-20] >> 12)& 0x07)
-        {
-          case 0:
-            this.MotorData.CompAcProt1 = '����'
-            break;
-          case 1:
-            this.MotorData.CompAcProt1 = '����'
-            break;
-          case 2:
-            this.MotorData.CompAcProt1 = '����'
-            break;
-          case 3:
-            this.MotorData.CompAcProt1 = '����'
-            break;
-          case 4:
-            this.MotorData.CompAcProt1 = '����'
-            break;
-          case 5:
-            this.MotorData.CompAcProt1 = '�콵'
-            break;
-          default:
-            break;
-        }
-        this.MotorData.ReverseGasOverheat1 = int16MudbusData[49-20] / 10 
-        this.MotorData.ExhaustGasOverheat1 = int16MudbusData[51-20] / 10 
-        this.MotorData.CondenserCasOverCool1 = int16MudbusData[53-20] / 10 
-        this.MotorData.TargetExhaustGas1 = int16MudbusData[112-20] / 10
-        this.MotorData.TargetCondenserGas1 = int16MudbusData[114-20] /10
-        switch (int16MudbusData[55-20])
-        {
-          case 0:
-            this.MotorData.EEVStatus1 = '��λ'
-            break;
-          case 1:
-            this.MotorData.EEVStatus1 = 'ֹͣ'
-            break;
-          case 2:
-            this.MotorData.EEVStatus1 = '����'
-            break;
-          case 3:
-            this.MotorData.EEVStatus1 = '����'
-            break;
-          case 4:
-            this.MotorData.EEVStatus1 = '����'
-            break;
-          case 5:
-            this.MotorData.EEVStatus1 = '�̶�'
-            break;
-          case 6:
-            this.MotorData.EEVStatus1 = 'ͻ��'
-            break;
-          case 7:
-            this.MotorData.EEVStatus1 = '���'
-            break;
-          case 8:
-            this.MotorData.EEVStatus1 = '�ֶ�'
-            break;
-          default:
-            break;
-        }
-        this.MotorData.EEVInitStep1 = int16MudbusData[59-20] 
-        this.MotorData.EEVTargetStep1 = int16MudbusData[61-20] 
-        this.MotorData.EEVNowStep1 = int16MudbusData[63-20]
-        this.MotorData.EEVAdjustStep1 = int16MudbusData[65-20]
-        this.MotorData.EEVAdjustPeriod1 = int16MudbusData[57-20] 
-        this.MotorData.EEVAdjustTime1 = int16MudbusData[116-20] 
-        this.MotorData.ReverseGasOverheatRate1 = int16MudbusData[130-20] / 10
-        this.MotorData.ExhaustGasOverheatRate1 = int16MudbusData[132-20] / 10
-        this.MotorData.WaterTempRate1 = int16MudbusData[134-20] / 10
-        this.MotorData.CompAdjustFreq1 = int16MudbusData[136-20]
-        this.MotorData.CompAdjustPeriod1 = int16MudbusData[138-20] 
-        switch (int16MudbusData[140-20])
-        {
-          case 0:
-            this.MotorData.CompRunStatus1 = '����'
-            break;
-          case 1:
-            this.MotorData.CompRunStatus1 = '����'
-            break;
-          case 2:
-            this.MotorData.CompRunStatus1 = 'ж��'
-            break;
-          default:
-            break;
-        }
-        this.MotorData.CompTargetFreq1 = int16MudbusData[84-20] 
-        this.MotorData.CompRunFreq1 = int16MudbusData[85-20] 
-        this.MotorData.CompIPMTemp1 = int16MudbusData[90-20] / 10 
-        this.MotorData.CompACCurrent1 = int16MudbusData[87-20] / 10 
-        this.MotorData.CompRunTime1 = changetime(int16MudbusData[88-20]) 
-        this.MotorData.CompSoptTime1 = changetime(int16MudbusData[89-20]) 
-        this.MotorData.FanTargetFreq1 = int16MudbusData[98-20]  
-        this.MotorData.FanRunFreq1 = int16MudbusData[99-20] 
-        this.MotorData.FanIPMTemp1 = int16MudbusData[102-20] / 10 
-        this.MotorData.FanACCurrent1 = int16MudbusData[124-20] / 10 
-        this.MotorData.FanRunTime1 = changetime(int16MudbusData[106-20]) 
-        this.MotorData.FanSoptTime1 = changetime(int16MudbusData[108-20]) 
+            if (uint16MudbusData[14] === 0) {
+                this.MotorData.Error13 = '无故障';
+            } else if (uint16MudbusData[14] === 1) {
+                this.MotorData.Error13 = '电机缺相';
+            } else if (uint16MudbusData[14] === 2) {
+                this.MotorData.Error13 = '电机过流';
+            } else if (uint16MudbusData[14] === 4) {
+                this.MotorData.Error13 = '电机堵转';
+            } else if (uint16MudbusData[14] === 8) {
+                this.MotorData.Error13 = '编码器通讯异常';
+            }
 
-        //��ϵͳ2��Ϣ
-        if (int16MudbusData[32-20] & 0x400)
-        {
-          this.FluorineData2.ExhaustGasTemp2 = int16MudbusData[44-20] / 10 
-          this.FluorineData2.ExhaustGasProt2 = '����'
-          switch (int16MudbusData[21-20] & 0x07)
-          {
-            case 0:
-              this.FluorineData2.ExhaustGasProt2 = '����'
-              break;
-            case 1:
-              this.FluorineData2.ExhaustGasProt2 = '����'
-              break;
-            case 2:
-              this.FluorineData2.ExhaustGasProt2 = '����'
-              break;
-            case 3:
-              this.FluorineData2.ExhaustGasProt2 = '����'
-              break;
-            case 4:
-              this.FluorineData2.ExhaustGasProt2 = '����'
-              break;
-            case 5:
-              this.FluorineData2.ExhaustGasProt2 = '�콵'
-              break;
-            default:
-              break;
-          }
-          this.FluorineData2.EvaporatorTemp2 = int16MudbusData[48-20] / 10 
-          switch ((int16MudbusData[21-20] >> 3)& 0x07)
-          {
-            case 0:
-              this.FluorineData2.EvaporatorProt2 = '����'
-              break;
-            case 1:
-              this.FluorineData2.EvaporatorProt2 = '����'
-              break;
-            case 2:
-              this.FluorineData2.EvaporatorProt2 = '����'
-              break;
-            case 3:
-              this.FluorineData2.EvaporatorProt2 = '����'
-              break;
-            case 4:
-              this.FluorineData2.EvaporatorProt2 = '����'
-              break;
-            case 5:
-              this.FluorineData2.EvaporatorProt2 = '�콵'
-              break;
-            default:
-              break;
-          }
+            if (uint16MudbusData[15] === 0) {
+                this.MotorData.Error14 = '无故障';
+            } else if (uint16MudbusData[15] === 1) {
+                this.MotorData.Error14 = '电机缺相';
+            } else if (uint16MudbusData[15] === 2) {
+                this.MotorData.Error14 = '电机过流';
+            } else if (uint16MudbusData[15] === 4) {
+                this.MotorData.Error14 = '电机堵转';
+            } else if (uint16MudbusData[15] === 8) {
+                this.MotorData.Error14 = '编码器通讯异常';
+            }
 
-          this.FluorineData2.CondenserTemp2 = int16MudbusData[47-20] / 10
-          this.FluorineData2.CondenserProt2 = '����'
-          switch ((int16MudbusData[21-20] >> 6)& 0x07)
-          {
-            case 0:
-              this.FluorineData2.CondenserProt2 = '����'
-              break;
-            case 1:
-              this.FluorineData2.CondenserProt2 = '����'
-              break;
-            case 2:
-              this.FluorineData2.CondenserProt2 = '����'
-              break;
-            case 3:
-              this.FluorineData2.CondenserProt2 = '����'
-              break;
-            case 4:
-              this.FluorineData2.CondenserProt2 = '����'
-              break;
-            case 5:
-              this.FluorineData2.CondenserProt2 = '�콵'
-              break;
-            default:
-              break;
-          }
+            if (uint16MudbusData[16] === 0) {
+                this.MotorData.Error15 = '无故障';
+            } else if (uint16MudbusData[16] === 1) {
+                this.MotorData.Error15 = '电机缺相';
+            } else if (uint16MudbusData[16] === 2) {
+                this.MotorData.Error15 = '电机过流';
+            } else if (uint16MudbusData[16] === 4) {
+                this.MotorData.Error15 = '电机堵转';
+            } else if (uint16MudbusData[16] === 8) {
+                this.MotorData.Error15 = '编码器通讯异常';
+            }
 
-          this.FluorineData2.SuctionTemp2 = int16MudbusData[45-20] / 10 
-          this.FluorineData2.LiquidPipeTemp2 = int16MudbusData[46-20] / 10 
-          this.FluorineData2.LowPress2 = int16MudbusData[74-20] / 10 
-          this.FluorineData2.HighPress2 = int16MudbusData[73-20] / 10 
-          switch ((int16MudbusData[21-20] >> 9)& 0x07)
-          {
-            case 0:
-              this.FluorineData2.PressProt2 = '����'
-              break;
-            case 1:
-              this.FluorineData2.PressProt2 = '����'
-              break;
-            case 2:
-              this.FluorineData2.PressProt2 = '����'
-              break;
-            case 3:
-              this.FluorineData2.PressProt2 = '����'
-              break;
-            case 4:
-              this.FluorineData2.PressProt2 = '����'
-              break;
-            case 5:
-              this.FluorineData2.PressProt2 = '�콵'
-              break;
-            default:
-              break;
-          }
+            this.MotorData.Current01 = (int16MudbusData[0x1032-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current02 = (int16MudbusData[0x1033-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current03 = (int16MudbusData[0x1034-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current04 = (int16MudbusData[0x1035-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current05 = (int16MudbusData[0x1036-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current06 = (int16MudbusData[0x1037-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current07 = (int16MudbusData[0x1038-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current08 = (int16MudbusData[0x1039-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current09 = (int16MudbusData[0x103A-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current10 = (int16MudbusData[0x103B-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current11 = (int16MudbusData[0x103C-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current12 = (int16MudbusData[0x103D-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current13 = (int16MudbusData[0x103E-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current14 = (int16MudbusData[0x103F-0x1003] / 100).toString() + ' A';
+            this.MotorData.Current15 = (int16MudbusData[0x1040-0x1003] / 100).toString() + ' A';
 
-          switch ((int16MudbusData[21-20] >> 12)& 0x07)
-          {
-            case 0:
-              this.FluorineData2.CompAcProt2 = '����'
-              break;
-            case 1:
-              this.FluorineData2.CompAcProt2 = '����'
-              break;
-            case 2:
-              this.FluorineData2.CompAcProt2 = '����'
-              break;
-            case 3:
-              this.FluorineData2.CompAcProt2 = '����'
-              break;
-            case 4:
-              this.FluorineData2.CompAcProt2 = '����'
-              break;
-            case 5:
-              this.FluorineData2.CompAcProt2 = '�콵'
-              break;
-            default:
-              break;
-          }
-          this.FluorineData2.ReverseGasOverheat2 = int16MudbusData[50-20] / 10 
-          this.FluorineData2.ExhaustGasOverheat2 = int16MudbusData[52-20] / 10 
-          this.FluorineData2.CondenserCasOverCool2 = int16MudbusData[54-20] / 10 
-          this.FluorineData2.TargetExhaustGas2 = int16MudbusData[113-20] / 10
-          this.FluorineData2.TargetCondenserGas2 = int16MudbusData[115-20] / 10
-          switch (int16MudbusData[56-20])
-          {
-            case 0:
-              this.FluorineData2.EEVStatus2 = '��λ'
-              break;
-            case 1:
-              this.FluorineData2.EEVStatus2 = 'ֹͣ'
-              break;
-            case 2:
-              this.FluorineData2.EEVStatus2 = '����'
-              break;
-            case 3:
-              this.FluorineData2.EEVStatus2 = '����'
-              break;
-            case 4:
-              this.FluorineData2.EEVStatus2 = '����'
-              break;
-            case 5:
-              this.FluorineData2.EEVStatus2 = '�̶�'
-              break;
-            case 6:
-              this.FluorineData2.EEVStatus2 = 'ͻ��'
-              break;
-            case 7:
-              this.FluorineData2.EEVStatus2 = '���'
-              break;
-            case 8:
-              this.FluorineData2.EEVStatus2 = '�ֶ�'
-              break;
-            default:
-              break;
-          }
+            uint32MudbusData = (uint16MudbusData[0x1014-0x1003] << 16) | uint16MudbusData[0x1015-0x1003];
+            this.MotorData.Location01 = uint32MudbusData.toString() + ' °';
 
-          this.FluorineData2.EEVInitStep2 = int16MudbusData[60-20] 
-          this.FluorineData2.EEVTargetStep2 = int16MudbusData[62-20] 
-          this.FluorineData2.EEVNowStep2 = int16MudbusData[64-20]
-          this.FluorineData2.EEVAdjustStep2 = int16MudbusData[66-20]
-          this.FluorineData2.EEVAdjustPeriod2 = int16MudbusData[58-20]  
-          this.FluorineData2.EEVAdjustTime2 = int16MudbusData[117-20]  
-          this.FluorineData2.ReverseGasOverheatRate2 = int16MudbusData[131-20] / 10
-          this.FluorineData2.ExhaustGasOverheatRate2 = int16MudbusData[133-20] / 10
-          this.FluorineData2.WaterTempRate2 = int16MudbusData[135-20] / 10
-          this.FluorineData2.CompAdjustFreq2 = int16MudbusData[137-20]
-          this.FluorineData2.CompAdjustPeriod2 = int16MudbusData[139-20]
-          switch (int16MudbusData[141-20])
-          {
-            case 0:
-              this.MotorData.CompRunStatus2 = '����'
-              break;
-            case 1:
-              this.MotorData.CompRunStatus2 = '����'
-              break;
-            case 2:
-              this.MotorData.CompRunStatus2 = 'ж��'
-              break;
-            default:
-              break;
-          }
-    
-          this.FluorineData2.CompTargetFreq2 = int16MudbusData[91-20] 
-          this.FluorineData2.CompRunFreq2 = int16MudbusData[92-20] 
-          this.FluorineData2.CompIPMTemp2 = int16MudbusData[97-20] / 10 
-          this.FluorineData2.CompACCurrent2 = int16MudbusData[94-20] / 10 
-          this.FluorineData2.CompRunTime2 = changetime(int16MudbusData[95-20]) 
-          this.FluorineData2.CompSoptTime2 = changetime(int16MudbusData[96-20]) 
-          this.FluorineData2.FanTargetFreq2 = int16MudbusData[100-20]  
-          this.FluorineData2.FanRunFreq2 = int16MudbusData[101-20] 
-          this.FluorineData2.FanIPMTemp2 = int16MudbusData[103-20] / 10 
-          this.FluorineData2.FanACCurrent2 = int16MudbusData[125-20] / 10 
-          this.FluorineData2.FanRunTime2 = changetime(int16MudbusData[107-20]) 
-          this.FluorineData2.FanSoptTime2 = changetime(int16MudbusData[109-20]) 
-        }
-        else 
-        {
-          this.FluorineData2.ExhaustGasTemp2 = ' / ' 
-          this.FluorineData2.ExhaustGasProt2 = ' / '
-          this.FluorineData2.ExhaustGasProt2 = ' / '
-          this.FluorineData2.EvaporatorTemp2 = ' / ' 
-          this.FluorineData2.EvaporatorProt2 = ' / '
-          this.FluorineData2.CondenserTemp2 = ' / '
-          this.FluorineData2.CondenserProt2 = ' / '
-          this.FluorineData2.CondenserProt2 = ' / '
-          this.FluorineData2.SuctionTemp2 = ' / ' 
-          this.FluorineData2.LiquidPipeTemp2 = ' / '
-          this.FluorineData2.LowPress2 = ' / '
-          this.FluorineData2.HighPress2 = ' / '
-          this.FluorineData2.PressProt2 = ' / '
-          this.FluorineData2.CompAcProt2 = ' / '
-          this.FluorineData2.ReverseGasOverheat2 = ' / ' 
-          this.FluorineData2.ExhaustGasOverheat2 = ' / '
-          this.FluorineData2.CondenserCasOverCool2 = ' / '
-          this.FluorineData2.TargetExhaustGas2 = ' / '
-          this.FluorineData2.TargetCondenserGas2 = ' / '
-          this.FluorineData2.EEVStatus2 = ' / '
-          this.FluorineData2.EEVInitStep2 = ' / '
-          this.FluorineData2.EEVTargetStep2 = ' / '
-          this.FluorineData2.EEVNowStep2 = ' / '
-          this.FluorineData2.EEVAdjustStep2 = ' / '
-          this.FluorineData2.EEVAdjustPeriod2 = ' / ' 
-          this.FluorineData2.EEVAdjustTime2 = ' / '
-          this.FluorineData2.ReverseGasOverheatRate2 = ' / '
-          this.FluorineData2.ExhaustGasOverheatRate2 = ' / '
-          this.FluorineData2.WaterTempRate2 = ' / '
-          this.FluorineData2.CompAdjustFreq2 = ' / '
-          this.FluorineData2.CompAdjustPeriod2 = ' / '
-          this.FluorineData2.CompRunStatus2 = ' / '
-          this.FluorineData2.CompTargetFreq2 = ' / '
-          this.FluorineData2.CompRunFreq2 = ' / '
-          this.FluorineData2.CompIPMTemp2 = ' / '
-          this.FluorineData2.CompACCurrent2 = ' / '
-          this.FluorineData2.CompRunTime2 = ' / '
-          this.FluorineData2.CompSoptTime2 = ' / '
-          this.FluorineData2.FanTargetFreq2 = ' / '
-          this.FluorineData2.FanRunFreq2 = ' / '
-          this.FluorineData2.FanIPMTemp2 = ' / '
-          this.FluorineData2.FanACCurrent2 = ' / '
-          this.FluorineData2.FanRunTime2 = ' / '
-          this.FluorineData2.FanSoptTime2 = ' / '
-        }
+            uint32MudbusData = (uint16MudbusData[0x1016-0x1003] << 16) | uint16MudbusData[0x1017-0x1003];
+            this.MotorData.Location02 = uint32MudbusData.toString() + ' °';
 
-        //д���������
+            uint32MudbusData = (uint16MudbusData[0x1018-0x1003] << 16) | uint16MudbusData[0x1019-0x1003];
+            this.MotorData.Location03 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x101A-0x1003] << 16) | uint16MudbusData[0x101B-0x1003];
+            this.MotorData.Location04 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x101C-0x1003] << 16) | uint16MudbusData[0x101D-0x1003];
+            this.MotorData.Location05 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x101E-0x1003] << 16) | uint16MudbusData[0x101F-0x1003];
+            this.MotorData.Location06 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1020-0x1003] << 16) | uint16MudbusData[0x1021-0x1003];
+            this.MotorData.Location07 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1022-0x1003] << 16) | uint16MudbusData[0x1023-0x1003];
+            this.MotorData.Location08 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1024-0x1003] << 16) | uint16MudbusData[0x1025-0x1003];
+            this.MotorData.Location09 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1026-0x1003] << 16) | uint16MudbusData[0x1027-0x1003];
+            this.MotorData.Location10 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1028-0x1003] << 16) | uint16MudbusData[0x1029-0x1003];
+            this.MotorData.Location11 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x102A-0x1003] << 16) | uint16MudbusData[0x102B-0x1003];
+            this.MotorData.Location12 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x102C-0x1003] << 16) | uint16MudbusData[0x102D-0x1003];
+            this.MotorData.Location13 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x102E-0x1003] << 16) | uint16MudbusData[0x102F-0x1003];
+            this.MotorData.Location14 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1030-0x1003] << 16) | uint16MudbusData[0x1031-0x1003];
+            this.MotorData.Location15 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1042-0x1003] << 16) | uint16MudbusData[0x1043-0x1003];
+            this.MotorData.JointData01 = uint32MudbusData.toString();
+            this.SystemData.JointPos01 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1044-0x1003] << 16) | uint16MudbusData[0x1045-0x1003];
+            this.MotorData.JointData02 = uint32MudbusData.toString();
+            this.SystemData.JointPos02 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1046-0x1003] << 16) | uint16MudbusData[0x1047-0x1003];
+            this.MotorData.JointData03 = uint32MudbusData.toString();
+            this.SystemData.JointPos03 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1048-0x1003] << 16) | uint16MudbusData[0x1049-0x1003];
+            this.MotorData.JointData04 = uint32MudbusData.toString();
+            this.SystemData.JointPos04 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x104A-0x1003] << 16) | uint16MudbusData[0x104B-0x1003];
+            this.MotorData.JointData05 = uint32MudbusData.toString();
+            this.SystemData.JointPos05 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x104C-0x1003] << 16) | uint16MudbusData[0x104D-0x1003];
+            this.MotorData.JointData06 = uint32MudbusData.toString();
+            this.SystemData.JointPos06 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x104E-0x1003] << 16) | uint16MudbusData[0x104F-0x1003];
+            this.MotorData.JointData07 = uint32MudbusData.toString();
+            this.SystemData.JointPos07 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1050-0x1003] << 16) | uint16MudbusData[0x1051-0x1003];
+            this.MotorData.JointData08 = uint32MudbusData.toString();
+            this.SystemData.JointPos08 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1052-0x1003] << 16) | uint16MudbusData[0x1053-0x1003];
+            this.MotorData.JointData09 = uint32MudbusData.toString();
+            this.SystemData.JointPos09 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1054-0x1003] << 16) | uint16MudbusData[0x1055-0x1003];
+            this.MotorData.JointData10 = uint32MudbusData.toString();
+            this.SystemData.JointPos10 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1056-0x1003] << 16) | uint16MudbusData[0x1057-0x1003];
+            this.MotorData.JointData11 = uint32MudbusData.toString();
+            this.SystemData.JointPos11 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x1058-0x1003] << 16) | uint16MudbusData[0x1059-0x1003];
+            this.MotorData.JointData12 = uint32MudbusData.toString();
+            this.SystemData.JointPos12 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x105A-0x1003] << 16) | uint16MudbusData[0x105B-0x1003];
+            this.MotorData.JointData13 = uint32MudbusData.toString();
+            this.SystemData.JointPos13 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x105C-0x1003] << 16) | uint16MudbusData[0x105D-0x1003];
+            this.MotorData.JointData14 = uint32MudbusData.toString();
+            this.SystemData.JointPos14 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x105E-0x1003] << 16) | uint16MudbusData[0x105F-0x1003];
+            this.MotorData.JointData15 = uint32MudbusData.toString(); 
+            this.SystemData.JointPos15 = ((uint32MudbusData - 32768) * 360 / 65536).toFixed(2) + ' °';
+
+        } else if (arg[1] === 0x03) {
+
+            if (uint16MudbusData[0xAB-0x8d] === 0) {
+                this.OtherData.MotorCtrl = '电机闭环模式';
+            } else if (uint16MudbusData[0xAB-0x8d] === 1) {
+                this.OtherData.MotorCtrl = '关节闭环模式';
+            }
+
+            uint32MudbusData = (uint16MudbusData[0x8D-0x8d] << 16) | uint16MudbusData[0x8E-0x8d];
+            this.SystemData.SetJoint01 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x8F-0x8d] << 16) | uint16MudbusData[0x90-0x8d];
+            this.SystemData.SetJoint02 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x91-0x8d] << 16) | uint16MudbusData[0x92-0x8d];
+            this.SystemData.SetJoint03 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x93-0x8d] << 16) | uint16MudbusData[0x94-0x8d];
+            this.SystemData.SetJoint04 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x95-0x8d] << 16) | uint16MudbusData[0x96-0x8d];
+            this.SystemData.SetJoint05 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x97-0x8d] << 16) | uint16MudbusData[0x98-0x8d];
+            this.SystemData.SetJoint06 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x99-0x8d] << 16) | uint16MudbusData[0x9A-0x8d];
+            this.SystemData.SetJoint07 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x9B-0x8d] << 16) | uint16MudbusData[0x9C-0x8d];
+            this.SystemData.SetJoint08 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x9D-0x8d] << 16) | uint16MudbusData[0x9E-0x8d];
+            this.SystemData.SetJoint09 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0x9F-0x8d] << 16) | uint16MudbusData[0xA0-0x8d];
+            this.SystemData.SetJoint10 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0xA1-0x8d] << 16) | uint16MudbusData[0xA2-0x8d];
+            this.SystemData.SetJoint11 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0xA3-0x8d] << 16) | uint16MudbusData[0xA4-0x8d];
+            this.SystemData.SetJoint12 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0xA5-0x8d] << 16) | uint16MudbusData[0xA6-0x8d];
+            this.SystemData.SetJoint13 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0xA7-0x8d] << 16) | uint16MudbusData[0xA8-0x8d];
+            this.SystemData.SetJoint14 = uint32MudbusData.toString() + ' °';
+
+            uint32MudbusData = (uint16MudbusData[0xA9-0x8d] << 16) | uint16MudbusData[0xAA-0x8d];
+            this.SystemData.SetJoint15 = uint32MudbusData.toString() + ' °';
+        } 
+
+        //save Excel time
         if (this.nowTime !== new Date().toLocaleString()){
-          this.nowTime = new Date().toLocaleString()
-          
-          var TempTimeStr24 = new Date();
-          if (this.csbStatue === 'open') {
-            this.logHandle.WriteDecoderLog(TempTimeStr24.toLocaleString('chinese', {hour12:false}));
-          }
+            this.nowTime = new Date().toLocaleString()
+            var TempTimeStr24 = new Date();
+            if (this.csbStatue === 'open') {
+                this.logHandle.WriteDecoderLog(TempTimeStr24.toLocaleString('chinese', {hour12:false}));
+            }
         }
-
-
     })
 
     function changetime(value) {

@@ -79,7 +79,7 @@ function ModuleBusUartRead (data) {
 
 function SendUartDataHandler () {
 
-  let cmdDataBuffer = [0x01, 0x03, 0x00, 0x14, 0x00, 0x7D];
+  let cmdDataBuffer = [0x01, 0x04, 0x10, 0x03, 0x00, 0x5D];
   let crc16 = crc.crc16(cmdDataBuffer, 0xFFFF);
   let cmdUartSendBuffer = cmdDataBuffer.concat((crc16 & 0xff)).concat(((crc16 & 0xff00) >> 8));
 
@@ -141,7 +141,7 @@ function StartConnect (name) {
 
   let BaudRate, DataBits, StopBits;
   if (store.state.SystemData.MonitorMode === 'outdoor') {
-    BaudRate = 9600;
+    BaudRate = 2000000;
     DataBits = 8;
     StopBits = 1;
   } else {

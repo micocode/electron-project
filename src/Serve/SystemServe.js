@@ -62,132 +62,134 @@ export class IPCSystemWin{
   
         RecvDataArray = RecvDataArray.slice(0, RecvDataArray.length - 2);
         let crc16 = crc.crc16(RecvDataArray, 0xFFFF);
-
+         
         if (recvBuff[recvBuff.length - 1] == ((crc16 & 0xff00) >> 8) && recvBuff[recvBuff.length - 2] == (crc16 & 0xff))
         {
-            switch (this.MessageCtrl.op_type)
-            {
-                case 'read_param':
-                    if (recvBuff.length <= 50)
-                    {
-                        this._sendIPCMsg(IndoorIPCMsg.APP_CMD_GET_SYSTEM_DATA, recvBuff);
-                    }
-                    break;
+            console.log("recv data:", recvBuff.length);
+            this._sendIPCMsg(IndoorIPCMsg.APP_REPORT_UART_DATA, recvBuff);
+            // switch (this.MessageCtrl.op_type)
+            // {
+            //     case 'read_param':
+            //         if (recvBuff.length <= 50)
+            //         {
+            //             this._sendIPCMsg(IndoorIPCMsg.APP_CMD_GET_SYSTEM_DATA, recvBuff);
+            //         }
+            //         break;
 
-                case 'write_0x06_cmd':
-                    if (recvBuff[1] === 0x06)
-                    {
-                        this.MessageCtrl.trySend0x06Cnt = 0;
-                        this._sendIPCMsg(APP_REPORT_DIALOG_PROMPT, {ErrorCode:'send ok'})
-                        this.MessageCtrl.op_type = 'idle'
-                        console.log("send data ok");
-                    }
-                    else 
-                    {
-                        this.sendMsgQueue.Enqueue(this.MessageCtrl.Message0x06Buffer);
-                        if (++this.MessageCtrl.trySend0x06Cnt > 3)
-                        {
-                            this.MessageCtrl.trySend0x06Cnt = 0;
-                            this._sendIPCMsg(APP_REPORT_DIALOG_PROMPT, {ErrorCode:'send ng'})
-                            this.MessageCtrl.op_type = 'idle'
-                        }
+            //     case 'write_0x06_cmd':
+            //         if (recvBuff[1] === 0x06)
+            //         {
+            //             this.MessageCtrl.trySend0x06Cnt = 0;
+            //             this._sendIPCMsg(APP_REPORT_DIALOG_PROMPT, {ErrorCode:'send ok'})
+            //             this.MessageCtrl.op_type = 'idle'
+            //             console.log("send data ok");
+            //         }
+            //         else 
+            //         {
+            //             this.sendMsgQueue.Enqueue(this.MessageCtrl.Message0x06Buffer);
+            //             if (++this.MessageCtrl.trySend0x06Cnt > 3)
+            //             {
+            //                 this.MessageCtrl.trySend0x06Cnt = 0;
+            //                 this._sendIPCMsg(APP_REPORT_DIALOG_PROMPT, {ErrorCode:'send ng'})
+            //                 this.MessageCtrl.op_type = 'idle'
+            //             }
 
-                        console.log("send data ng");
+            //             console.log("send data ng");
                        
-                    }
-                    break;
+            //         }
+            //         break;
 
-                case 'write_0x10_cmd':
-                    if (++this.MessageCtrl.Recv0x10CmdData >= 2)
-                    {
-                        this.MessageCtrl.Recv0x10CmdData = 0;
+            //     case 'write_0x10_cmd':
+            //         if (++this.MessageCtrl.Recv0x10CmdData >= 2)
+            //         {
+            //             this.MessageCtrl.Recv0x10CmdData = 0;
                         
-                        if (recvBuff[1] === 0x10)
-                        {
-                            this.MessageCtrl.trySend0x10Cnt = 0;
-                            this._sendIPCMsg(APP_REPORT_DIALOG_PROMPT, {ErrorCode:'send ok'})
-                            this.MessageCtrl.op_type = 'idle'
-                        }
-                        else 
-                        {
-                            this.sendMsgQueue.Enqueue(this.MessageCtrl.Message0x10Buffer1);
-                            this.sendMsgQueue.Enqueue(this.MessageCtrl.Message0x10Buffer2);
-                            if (++this.MessageCtrl.trySend0x10Cnt > 3)
-                            {
-                                this.MessageCtrl.trySend0x10Cnt = 0;
-                                this._sendIPCMsg(APP_REPORT_DIALOG_PROMPT, {ErrorCode:'send ng'})
-                                this.MessageCtrl.op_type = 'idle'
-                            }
-                        }
-                    }
-                    break;
+            //             if (recvBuff[1] === 0x10)
+            //             {
+            //                 this.MessageCtrl.trySend0x10Cnt = 0;
+            //                 this._sendIPCMsg(APP_REPORT_DIALOG_PROMPT, {ErrorCode:'send ok'})
+            //                 this.MessageCtrl.op_type = 'idle'
+            //             }
+            //             else 
+            //             {
+            //                 this.sendMsgQueue.Enqueue(this.MessageCtrl.Message0x10Buffer1);
+            //                 this.sendMsgQueue.Enqueue(this.MessageCtrl.Message0x10Buffer2);
+            //                 if (++this.MessageCtrl.trySend0x10Cnt > 3)
+            //                 {
+            //                     this.MessageCtrl.trySend0x10Cnt = 0;
+            //                     this._sendIPCMsg(APP_REPORT_DIALOG_PROMPT, {ErrorCode:'send ng'})
+            //                     this.MessageCtrl.op_type = 'idle'
+            //                 }
+            //             }
+            //         }
+            //         break;
                 
-                case 'idle':
-                    if (recvBuff.length <= 50)
-                    {
+            //     // case 'idle':
+            //     //     if (recvBuff.length <= 50)
+            //     //     {
                        
-                        switch (this.MessageCtrl.SetTimeoutNum)
-                        {
-                            case 0:
-                                // console.log("0>>", recvBuff);
-                                break;
-                            case 1:
+            //     //         switch (this.MessageCtrl.SetTimeoutNum)
+            //     //         {
+            //     //             case 0:
+            //     //                 // console.log("0>>", recvBuff);
+            //     //                 break;
+            //     //             case 1:
 
-                                this.MessageCtrl.Watchdata[0] = recvBuff[3];
-                                this.MessageCtrl.Watchdata[1] = recvBuff[4];
+            //     //                 this.MessageCtrl.Watchdata[0] = recvBuff[3];
+            //     //                 this.MessageCtrl.Watchdata[1] = recvBuff[4];
                                
-                                break;
-                            case 2:
-                                this.MessageCtrl.Watchdata[2] = recvBuff[3];
-                                this.MessageCtrl.Watchdata[3] = recvBuff[4];
+            //     //                 break;
+            //     //             case 2:
+            //     //                 this.MessageCtrl.Watchdata[2] = recvBuff[3];
+            //     //                 this.MessageCtrl.Watchdata[3] = recvBuff[4];
                               
-                                break;
-                            case 3:
-                                this.MessageCtrl.Watchdata[4] = recvBuff[3];
-                                this.MessageCtrl.Watchdata[5] = recvBuff[4];
-                                this._sendIPCMsg(IndoorIPCMsg.APP_WATCH_DATA_REFRESH, this.MessageCtrl.Watchdata);
-                                // console.log("Watchdata>>", this.MessageCtrl.Watchdata);
-                                break;
-                            default:
-                                break;
-                        }
+            //     //                 break;
+            //     //             case 3:
+            //     //                 this.MessageCtrl.Watchdata[4] = recvBuff[3];
+            //     //                 this.MessageCtrl.Watchdata[5] = recvBuff[4];
+            //     //                 this._sendIPCMsg(IndoorIPCMsg.APP_WATCH_DATA_REFRESH, this.MessageCtrl.Watchdata);
+            //     //                 // console.log("Watchdata>>", this.MessageCtrl.Watchdata);
+            //     //                 break;
+            //     //             default:
+            //     //                 break;
+            //     //         }
 
                        
-                    }
-                    else 
-                    {
-                        this._sendIPCMsg(IndoorIPCMsg.APP_REPORT_UART_RECV_DATA, recvBuff);
-                        //console.log("big data ------------------");
-                    }
-                    break;
+            //     //     }
+            //     //     else 
+            //     //     {
+            //     //         this._sendIPCMsg(IndoorIPCMsg.APP_REPORT_UART_DATA, recvBuff);
+            //     //         //console.log("big data ------------------");
+            //     //     }
+            //     //     break;
 
-                default:
-                    break;
-            }
+            //     default:
+            //         break;
+            // }
         }
         else 
         {
-            if (this.MessageCtrl.op_type === 'write_0x06_cmd') 
-            {
-                this.sendMsgQueue.Enqueue(this.MessageCtrl.Message0x06Buffer);
-                if (++this.MessageCtrl.trySend0x06Cnt > 3)
-                {
-                    this.MessageCtrl.trySend0x06Cnt = 0;
-                    this.MessageCtrl.op_type === 'idle'
-                    this._sendIPCMsg(APP_REPORT_DIALOG_PROMPT, {ErrorCode:'send ng'})
-                }
-            }
-            else if (this.MessageCtrl.op_type === 'write_0x10_cmd')
-            {
-                this.sendMsgQueue.Enqueue(this.MessageCtrl.Message0x10Buffer1);
-                this.sendMsgQueue.Enqueue(this.MessageCtrl.Message0x10Buffer2);
-                if (++this.MessageCtrl.trySend0x10Cnt > 3)
-                {
-                    this.MessageCtrl.trySend0x10Cnt = 0;
-                    this._sendIPCMsg(APP_REPORT_DIALOG_PROMPT, {ErrorCode:'send ng'})
-                    this.MessageCtrl.op_type = 'idle'
-                }
-            }    
+            // if (this.MessageCtrl.op_type === 'write_0x06_cmd') 
+            // {
+            //     this.sendMsgQueue.Enqueue(this.MessageCtrl.Message0x06Buffer);
+            //     if (++this.MessageCtrl.trySend0x06Cnt > 3)
+            //     {
+            //         this.MessageCtrl.trySend0x06Cnt = 0;
+            //         this.MessageCtrl.op_type === 'idle'
+            //         this._sendIPCMsg(APP_REPORT_DIALOG_PROMPT, {ErrorCode:'send ng'})
+            //     }
+            // }
+            // else if (this.MessageCtrl.op_type === 'write_0x10_cmd')
+            // {
+            //     this.sendMsgQueue.Enqueue(this.MessageCtrl.Message0x10Buffer1);
+            //     this.sendMsgQueue.Enqueue(this.MessageCtrl.Message0x10Buffer2);
+            //     if (++this.MessageCtrl.trySend0x10Cnt > 3)
+            //     {
+            //         this.MessageCtrl.trySend0x10Cnt = 0;
+            //         this._sendIPCMsg(APP_REPORT_DIALOG_PROMPT, {ErrorCode:'send ng'})
+            //         this.MessageCtrl.op_type = 'idle'
+            //     }
+            // }    
         }
     }
 
@@ -392,75 +394,38 @@ export class IPCSystemWin{
             this._SerialSendService = setInterval(() => {
                 if (store.state.SystemData.MonitorMode === 'outdoor') {
                     if (ComIsConnect()) {
-                        // if (!this.sendMsgQueue.IsEmpty()) {
-                        //     UartSendBuffer(this.sendMsgQueue.Dequeue(), 0);   // 发送队列不为空 
-                        // } else {             
-                        //     let cmdDataBuffer = [0x01, 0x03, 0x00, 0x14, 0x00,0x7F];
-                        //     let crc16 = crc.crc16(cmdDataBuffer, 0xFFFF);
-                        //     let cmdUartSendBuffer = cmdDataBuffer.concat((crc16 & 0xff)).concat(((crc16 & 0xff00) >> 8));
-                        //     UartSendBuffer(cmdUartSendBuffer, 0);           // 发送 查询数据指令 
-                        //     this.MessageCtrl.op_type = 'idle'
-                        // }
-                        var intervalId = setInterval(() => { 
-                          if (this.MessageCtrl.SetTimeoutNum >= 3) {
-                            this.MessageCtrl.SetTimeoutNum = 0;
-                            if (!this.sendMsgQueue.IsEmpty()) {
-                                UartSendBuffer(this.sendMsgQueue.Dequeue(), 0);   
-                            } else {
-                                let cmdDataBuffer = [0x01, 0x03, 0x00, 0x14, 0x00,0x7F];
+                        if (!this.sendMsgQueue.IsEmpty()) {
+                            UartSendBuffer(this.sendMsgQueue.Dequeue(), 0);   
+                        } else {
+                            
+                            if (this.MessageCtrl.SetTimeoutNum === 0) {
+                                let cmdDataBuffer = [0x01, 0x04, 0x10, 0x03, 0x00, 0x5D];
                                 let crc16 = crc.crc16(cmdDataBuffer, 0xFFFF);
                                 let cmdUartSendBuffer = cmdDataBuffer.concat((crc16 & 0xff)).concat(((crc16 & 0xff00) >> 8));
                                 UartSendBuffer(cmdUartSendBuffer, 0);           
                                 this.MessageCtrl.op_type = 'idle'
-                                // console.log("send  --------------");
-                            }
-                            clearInterval(intervalId); 
-                          } else {
-                            if (this.sendMsgQueue.IsEmpty()) {
 
-                                let cmdDataBuffer1 = [0x01, 0x03, 0x00, 0x00, 0x00, 0x01];
-                                switch (this.MessageCtrl.SetTimeoutNum)
-                                {
-                                    case 0:
-                                        cmdDataBuffer1[2] = (this.MessageCtrl.WatchAddr1 & 0xff00) >> 8;
-                                        cmdDataBuffer1[3] = (this.MessageCtrl.WatchAddr1 & 0xff);
-                                        break;
-                                    case 1:
-                                        cmdDataBuffer1[2] = (this.MessageCtrl.WatchAddr2 & 0xff00) >> 8;
-                                        cmdDataBuffer1[3] = (this.MessageCtrl.WatchAddr2 & 0xff);
-                                        break;
-                                    case 2:
-                                        cmdDataBuffer1[2] = (this.MessageCtrl.WatchAddr3 & 0xff00) >> 8;
-                                        cmdDataBuffer1[3] = (this.MessageCtrl.WatchAddr3 & 0xff);
-                                        break;
-                                    // case 3:
-                                    //     cmdDataBuffer1[2] = (this.MessageCtrl.WatchAddr4 & 0xff00) >> 8;
-                                    //     cmdDataBuffer1[3] = (this.MessageCtrl.WatchAddr4 & 0xff);
-                                    //     break;
-                                    // case 4:
-                                    //     cmdDataBuffer1[2] = (this.MessageCtrl.WatchAddr5 & 0xff00) >> 8;
-                                    //     cmdDataBuffer1[3] = (this.MessageCtrl.WatchAddr5 & 0xff);
-                                    //     break;
-                                    default:
-                                        break;
-                                }
-                                let crc161 = crc.crc16(cmdDataBuffer1, 0xFFFF);
-                                let cmdUartSendBuffer1 = cmdDataBuffer1.concat((crc161 & 0xff)).concat(((crc161 & 0xff00) >> 8));
-                                UartSendBuffer(cmdUartSendBuffer1, 0);          
+                            } else {
+                                let cmdData2Buffer = [0x01, 0x03, 0x00, 0x8d, 0x00, 0x1f];
+                                let crc162 = crc.crc16(cmdData2Buffer, 0xFFFF);
+                                let cmdUart2SendBuffer = cmdData2Buffer.concat((crc162 & 0xff)).concat(((crc162 & 0xff00) >> 8));
+                                UartSendBuffer(cmdUart2SendBuffer, 0);           
                                 this.MessageCtrl.op_type = 'idle'
                             }
-                            this.MessageCtrl.SetTimeoutNum++;
-                          }
-                        }, 200);
+                           
+                            this.MessageCtrl.SetTimeoutNum ^= 1;
+                            // console.log("send  --------------");
+                        }
+                      
                     }
                 }
-            }, 1000);
+            }, 200);
         }
     }
 
 
     _sendIPCMsg(id, msg){
-        this.windowsHandle.webContents.send(id, msg);
+        this.windowsHandle.send(id, msg);
     }
   
 }

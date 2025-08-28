@@ -26,7 +26,7 @@ export const APP_CMD_SET_WIRTE_SYSTEM_DATA  = "set-wirte-system-data"   // 设�
 export const APP_CMD_SET_READ_SYSTEM_DATA   = "set-read-system-data"    // 设置系统参数
 export const APP_CMD_GET_SYSTEM_DATA        = "get-system-data"         // 设置系统参数
 export const APP_CMD_SET_PARAM_DATA        = "set-system-param"         // 设置系统参数
-export const APP_REPORT_UART_RECV_DATA      = 'receive-data-broadcast'
+export const APP_REPORT_UART_DATA      = 'receive-data-broadcast'
 export const APP_WATCH_DATA                 = 'watch-data'
 export const APP_WATCH_DATA_REFRESH         = 'watch-data-refresh'
 
